@@ -1,0 +1,92 @@
+$baseFontFamily: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+
+@import "bootstrap";
+@import "bootstrap-responsive-custom";
+
+$johnGreen: #357A24;
+$lightGray: #ccc;
+
+/* global things */
+img {
+	max-width: 100%;
+}
+
+body {
+	background-color: $johnGreen;
+	padding-top: 20px;
+}
+
+#content-wrapper {
+	margin-bottom: 36px;
+	#content {
+
+	}
+}
+
+#nav {
+	color: darken($johnGreen, 15%);
+	a {
+		color: lighten($johnGreen, 45%);
+	}
+	h1 {
+		color: white;
+		font-size: 50px;
+		text-shadow: 1px 3px 5px darken($johnGreen, 15%);
+		margin: 0 0 18px 0;
+		font-family: Futura, 'Century Gothic', AppleGothic, sans-serif;
+		a {
+			color: white;
+		}
+	}
+	.tagline {
+		color: white;
+		font-size: 15px;
+	}
+	h2 {
+		text-transform: uppercase;
+		font-size: 18px;
+		a {
+			color: darken($johnGreen, 15%);
+		}
+	}
+	.controls {
+		select {
+
+		}
+	}
+}
+
+/* comics */
+.comic {
+	background-color: white;
+	padding: 13px;
+	margin-bottom: 13px;
+	@include box-shadow(1px 3px 5px darken($johnGreen, 15%));
+	.info {
+		color: $gray;
+		font-style: italic;
+		a {
+			color: $gray;
+		}
+		.permalink {
+			float: right;
+		}
+	}
+	.frames {
+		margin-bottom: 10px;
+		.frame {
+			img {
+				width: 100%;
+				border: 2px solid $gray;
+			}
+		}
+	}
+	.title {
+		font-weight: bold;
+		font-size: 13px;
+		line-height: 18px;
+	}
+	.description {
+
+	}
+}
