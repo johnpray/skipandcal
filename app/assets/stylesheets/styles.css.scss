@@ -26,6 +26,9 @@ a {
 		font-size: 35px; font-size: 3.5rem; margin-bottom: 3px;
 		font-family: $foundationFontFamily;
 		letter-spacing: -1px;
+		a {
+			color: white;
+		}
 	}
 	.tagline {
 		color: darken($johnGreen, 10%);
@@ -85,8 +88,6 @@ a {
 			}
 		}
 		.title {
-			font-size: 13px; font-size: 1.3rem; line-height: 1.25; margin: 0 0 18px;
-			font-weight: bold;
 		}
 	}
 }
