@@ -12,7 +12,7 @@ img {
 }
 
 body {
-	background-color: $johnGreen;
+	background-color: darken($johnGreen, 15%);
 	padding-top: 20px;
 }
 
@@ -23,12 +23,39 @@ body {
 	}
 }
 
-#nav {
-	@include opacity(.25);
-	@include transition(opacity 0.75s linear);
-	&:hover {
-		@include opacity(1);
+header {
+	.skip-to-nav {
+		float: right;
+		a {
+			color: lighten($johnGreen, 45%);
+			&:hover {
+				color: lighten($johnGreen, 45%);
+			}
+		}
 	}
+	h1 {
+		color: white;
+		font-size: 32px;
+		text-shadow: 1px 3px 5px darken($johnGreen, 25%);
+		margin: 0 0 5px 0;
+		font-family: Futura, 'Century Gothic', AppleGothic, sans-serif;
+		a {
+			color: white;
+		}
+	}
+	.tagline {
+		color: white;
+		font-size: 13px;
+		color: lighten($johnGreen, 35%);
+	}
+}
+
+#nav-wrapper {
+	background: $johnGreen;
+}
+
+#nav {
+	padding: 42px 0 42px 0;
 	color: darken($johnGreen, 15%);
 	a {
 		color: lighten($johnGreen, 45%);
@@ -36,7 +63,7 @@ body {
 	h1 {
 		color: white;
 		font-size: 50px;
-		text-shadow: 1px 3px 5px darken($johnGreen, 15%);
+		text-shadow: 1px 3px 5px darken($johnGreen, 25%);
 		margin: 0 0 18px 0;
 		font-family: Futura, 'Century Gothic', AppleGothic, sans-serif;
 		a {
@@ -57,7 +84,7 @@ body {
 	}
 	.controls {
 		select {
-			@include opacity(.5);
+			@include opacity(.25);
 			&:hover {
 				@include opacity(1);
 			}
@@ -67,10 +94,9 @@ body {
 
 /* comics */
 .comic {
-	background-color: white;
-	padding: 13px;
+	background-color: lighten($johnGreen, 65%);
 	margin-bottom: 13px;
-	@include box-shadow(1px 3px 5px darken($johnGreen, 15%));
+	/* @include box-shadow(1px 3px 5px darken($johnGreen, 15%)); */
 	.info {
 		color: $gray;
 		font-style: italic;
@@ -88,7 +114,7 @@ body {
 				width: 100%;
 			}
 			margin-bottom: 13px;
-			border: 2px solid $gray;
+			
 		}
 	}
 	.title {

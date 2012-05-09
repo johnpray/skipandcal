@@ -9,50 +9,49 @@
       <%= render 'layouts/ie6_warning' %>
       <%= render 'layouts/flash', flash: flash %>
 
-      <div class="row-fluid">
-        <div class="span8" id="content-wrapper">
-        	<div id="content">
-          	<%= yield %>
-          </div>
+      <div class="row">
+      	<div class="span12" id="content">
+        	<%= yield %>
         </div>
-        <nav class="span4" id="nav">
-
-          <h1><%= link_to 'Skip & Cal', '#' %></h1>
-          <p class="tagline">Cartoons and comics by <%= link_to 'John Pray', 'http://johnpray.com' %></p>
-
-          <h2>You are viewing</h2>
-          <form class="controls form-vertical">
-          	<select>
-          		<option>All comics</option>
-          	</select>
-          	<select>
-          		<option>from new to old</option>
-          	</select>
-          	<noscript>
-          		<button class="btn" type="submit" value="Go"></input>
-          	</noscript>
-          </form>
-
-          <h2><%= link_to 'Collections', '#' %></h2>
-          <ul class="unstyled">
-          	<li><%= link_to 'Skip & Cal', '#' %></li>
-          	<li><%= link_to 'Editorial Cartoons', '#' %></li>
-          	<li><%= link_to "Fan Comics and Nintendon'ts", '#' %></li>
-          	<li><%= link_to "Cardinal Courier (2007-2011)", '#' %></li>
-          	<li><%= link_to "Miscellaneous and Doodles", '#' %></li>
-          </ul>
-
-          <h2>Other Things</h2>
-          <ul class="unstyled">
-          	<li><%= link_to 'About', '#' %></li>
-          	<li><%= link_to "Contact", '#' %></li>
-          	<li><%= link_to "Twitter", '#' %></li>
-          </ul>
-        </nav>
       </div>
+    </div>
+    <div id="nav-wrapper"><div class="container"><div class="row">
+      <nav class="span12" id="nav">
 
+        <h1><%= link_to 'Skip & Cal', '#' %></h1>
+        <p class="tagline">Cartoons and comics by <%= link_to 'John Pray', 'http://johnpray.com' %></p>
+
+        <h2>You are viewing</h2>
+        <form class="controls form-vertical">
+        	<select>
+        		<option>All comics</option>
+        	</select>
+        	<select>
+        		<option>from new to old</option>
+        	</select>
+        	<noscript>
+        		<button class="btn" type="submit" value="Go"></input>
+        	</noscript>
+        </form>
+
+        <h2><%= link_to 'Collections', '#' %></h2>
+        <ul class="unstyled">
+        	<li><%= link_to 'Skip & Cal', '#' %></li>
+        	<li><%= link_to 'Editorial Cartoons', '#' %></li>
+        	<li><%= link_to "Fan Comics and Nintendon'ts", '#' %></li>
+        	<li><%= link_to "Cardinal Courier (2007-2011)", '#' %></li>
+        	<li><%= link_to "Miscellaneous and Doodles", '#' %></li>
+        </ul>
+
+        <h2>Other Things</h2>
+        <ul class="unstyled">
+        	<li><%= link_to 'About', '#' %></li>
+        	<li><%= link_to "Contact", '#' %></li>
+        	<li><%= link_to "Twitter", '#' %></li>
+        </ul>
+      </nav>
+    </div></div></div>
       <%= render 'layouts/footer' %>
       <!-- <%= debug(params) if Rails.env.development? %> -->
-    </div>
   </body>
 </html>
