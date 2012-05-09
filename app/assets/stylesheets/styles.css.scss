@@ -19,7 +19,7 @@ a {
 }
 
 /* header */
-header {
+#header {
 	padding-top: 2%;
 	h1 {
 		color: white;
@@ -45,6 +45,13 @@ header {
 	.change-order {
 		float: right;
 		margin: 4% 0;
+	}
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+	a {
+		color: $johnGreen;
 	}
 }
 
@@ -80,6 +87,21 @@ header {
 		.title {
 			font-size: 13px; font-size: 1.3rem; line-height: 1.25; margin: 0 0 18px;
 			font-weight: bold;
+		}
+	}
+}
+
+#nav {
+	margin-top: 32px;
+	h2 {
+		color: darken($johnGreen, 10%);
+		text-transform: uppercase;
+		font-size: 18px;
+		font-size: 1.8rem;
+		font-weight: bold;
+		text-shadow: 0 1px 0 lighten($johnGreen, 10%);
+		a {
+			color: darken($johnGreen, 10%);
 		}
 	}
 }
