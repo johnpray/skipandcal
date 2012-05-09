@@ -26,34 +26,7 @@
       </div>
 
 
-      <nav class="row" id="nav">
-
-        <div class="three columns offset-by-one">
-          <h2><%= link_to 'Collections', '#' %></h2>
-          <ul class="unstyled">
-          	<li><%= link_to 'Skip & Cal', '#' %></li>
-          	<li><%= link_to 'Editorial Cartoons', '#' %></li>
-          	<li><%= link_to "Fan Comics and Nintendon'ts", '#' %></li>
-          	<li><%= link_to "Cardinal Courier (2007-2011)", '#' %></li>
-          	<li><%= link_to "Miscellaneous and Doodles", '#' %></li>
-          </ul>
-        </div>
-
-        <div class="three columns">
-          <h2>Other Things</h2>
-          <ul class="unstyled">
-          	<li><%= link_to 'About', '#' %></li>
-          	<li><%= link_to "Contact", '#' %></li>
-          	<li><%= link_to "Twitter", '#' %></li>
-          </ul>
-        </div>
-
-        <div class="four columns end">
-          <h2>Random Comic</h2>
-          <%= image_tag 'http://media.tumblr.com/tumblr_l5cycwGpRU1qcoall.png', style: 'width: 100%' %>
-        </div>
-
-      </nav>
+      <%= render 'layouts/nav' %>
 
     </div>
 

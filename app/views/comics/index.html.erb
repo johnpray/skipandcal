@@ -1,0 +1,5 @@
+<ul class="comics">
+	<% @comics.each do |comic| %>
+		<%= render 'comics/comic', comic: comic %>
+	<% end %>
+</ul>

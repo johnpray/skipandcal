@@ -1,0 +1,21 @@
+<li class="comic-wrapper">
+	<div class="comic row">
+		<div class="info twelve columns">
+			<%= link_to 'permalink', comic_path, class: 'permalink' %>
+			<p class="date"><%= comic.published_at || comic.created_at %></p>
+		</div>
+		<div class="twelve columns">
+			<ul class="frames block-grid mobile <%= (comic.frames.count > 1) ? 'two-up' : 'one-up' %>">
+				<% comic.frames.each do |frame| %>
+				<li class="frame">
+					<%= image_tag frame.image.url(:display), alt: frame.alt_text, title: frame.title_text %>
+				</li>
+				<% end %>
+			</ul>
+			<p class="title"><strong><%= markdown_inline comic.title %></strong></p>
+			<div class="description">
+				<%= markdown comic.description %>
+			</div>
+		</div>
+	</div>
+</li>

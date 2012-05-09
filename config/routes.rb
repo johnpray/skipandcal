@@ -1,5 +1,19 @@
 Skipandcal::Application.routes.draw do
 
+  get "comics/index"
+
+  get "comics/show"
+
+  get "comics/create"
+
+  get "comics/new"
+
+  get "comics/edit"
+
+  get "comics/update"
+
+  get "comics/destroy"
+
   root to: 'static_pages#about'
   #match '/about', to: 'static_pages#about'
 

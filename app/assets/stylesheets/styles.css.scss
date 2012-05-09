@@ -11,7 +11,7 @@ body {
 	background: $johnGreen;
 }
 a {
-	color: lighten($johnGreen, 20%);
+	color: lighten($johnGreen, 30%);
 	&:hover {
 		color: lighten($johnGreen, 30%);
 		text-decoration: underline;
@@ -31,7 +31,7 @@ a {
 		}
 	}
 	.tagline {
-		color: darken($johnGreen, 10%);
+		color: darken($johnGreen, 15%);
 		text-transform: uppercase;
 		font-size: 18px;
 		font-size: 1.8rem;
@@ -93,16 +93,18 @@ a {
 }
 
 #nav {
-	margin-top: 32px;
+	color: darken($johnGreen, 15%);
+	margin-top: 13px;
 	h2 {
-		color: darken($johnGreen, 10%);
+		color: darken($johnGreen, 15%);
 		text-transform: uppercase;
 		font-size: 18px;
 		font-size: 1.8rem;
 		font-weight: bold;
 		text-shadow: 0 1px 0 lighten($johnGreen, 10%);
+		margin-bottom: 13px;
 		a {
-			color: darken($johnGreen, 10%);
+			color: darken($johnGreen, 15%);
 		}
 	}
 }
