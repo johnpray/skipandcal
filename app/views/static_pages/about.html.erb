@@ -1,25 +1,25 @@
-<header>
-	<h1>Skip &amp; Cal</h1>
-	<p class="skip-to-nav"><%= link_to 'skip to nav', '#nav' %></p>
-	<p class="tagline">cartoons and comics by John Pray</p>
-</header>
-<div class="comic row">
-	<div class="info span12">
-		<a href="#" class="permalink">permalink</a>
-		<p class="date">15 January 2008</p>
-	</div>
-	<div class="span12"><div class="frames row">
-		<div class="frame span6">
-			<%= image_tag 'sample_comic_frames/1.png' %>
+
+<div class="comic-wrapper">
+	<div class="comic row">
+		<div class="info twelve columns">
+			<a href="#" class="permalink">permalink</a>
+			<p class="date">15 January 2008</p>
 		</div>
-		<div class="frame span6">
-			<%= image_tag 'sample_comic_frames/2.png' %>
-		</div>
-		<div class="frame span6">
-			<%= image_tag 'sample_comic_frames/3.png' %>
-		</div>
-		<div class="frame span6">
-			<%= image_tag 'sample_comic_frames/4.png' %>
+		<div class="twelve columns">
+			<ul class="frames block-grid mobile two-up">
+				<li class="frame">
+					<%= image_tag 'sample_comic_frames/1.png' %>
+				</li>
+				<li class="frame">
+					<%= image_tag 'sample_comic_frames/2.png' %>
+				</li>
+				<li class="frame">
+					<%= image_tag 'sample_comic_frames/3.png' %>
+				</li>
+				<li class="frame">
+					<%= image_tag 'sample_comic_frames/4.png' %>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<!--
@@ -37,7 +37,7 @@
 	</div>
 -->
 </div>
-
+<!--
 <div class="comic">
 	<div class="info">
 		<a href="#" class="permalink">permalink</a>
@@ -58,3 +58,4 @@
 		<p>(It seems the cartoons I’m most proud of have to deal with the food at my school. Well, I guess it is a pretty important thing in our lives.)
 	</div>
 </div>
+-->

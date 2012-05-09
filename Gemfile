@@ -5,7 +5,7 @@ gem 'jquery-rails', '~> 2.0.0'
 gem 'sass-rails',   '~> 3.2.4'
 gem 'bcrypt-ruby', '~> 3.0.1'
 
-
+#gem 'bootstrap-sass', '~> 2.0.2' # twitter bootstrap framework, for mixins
 #gem 'will_paginate', '~> 3.0.3' # multiple pages for indexes
 #gem 'redcarpet', '~> 2.1.1' # markdown
 #gem 'paperclip', '~> 3.0.2' # uploads

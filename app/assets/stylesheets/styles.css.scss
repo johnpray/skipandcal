@@ -1,5 +1,67 @@
 $baseFontFamily: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 
-
 $johnGreen: #357A24;
 $lightGray: #ccc;
+
+@import "mixins";
+
+body {
+	font-family: $baseFontFamily;
+	background: $johnGreen;
+}
+a {
+	color: lighten($johnGreen, 20%);
+	&:hover {
+		color: lighten($johnGreen, 30%);
+		text-decoration: underline;
+	}
+}
+
+/* header */
+header {
+	padding-top: 4%;
+	h1 {
+		color: white;
+		font-size: 28px; font-size: 2.8rem; margin-bottom: 3px;
+		text-shadow: 1px 1px 3px darken($johnGreen, 20%);
+	}
+	.tagline {
+		color: darken($johnGreen, 15%);
+		font-weight: bold;
+		text-shadow: 0 0.5px 0 lighten($johnGreen, 20%);
+	}
+	.skip-to-nav {
+		float: right;
+	}
+}
+
+/* comic */
+.comic-wrapper {
+	padding: 4%;
+	background: white;
+	@include box-shadow(2px 4px 10px darken($johnGreen, 25%));
+	overflow: hidden;
+	a {
+		color: $johnGreen;
+		&:hover {
+			color: darken($johnGreen, 10%);
+			text-decoration: underline;
+		}
+	}
+	.comic {
+		.info {
+			font-style: italic;
+			color: gray;
+			.permalink {
+				float: right;
+			}
+		}
+		.frames {
+			.frame {
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
