@@ -8,14 +8,17 @@
 		<div class="container" id="content-container">
       <%= render 'layouts/ie6_warning' %>
       <%= render 'layouts/flash', flash: flash %>
-
+      <header class="row">
+        <div class="eight phone-three columns offset-by-one">
+          <h1>Skip &amp; Cal</h1>
+          <p class="tagline">cartoons and comics by John Pray</p>
+        </div>
+        <div class="two phone-one columns end">
+          <%= link_to 'skip to nav', '#nav', class: 'skip-to-nav small radius green button' %>
+        </div>
+      </header>
       <div class="row">
       	<div class="ten columns offset-by-one" id="content">
-          <header>
-            <h1>Skip &amp; Cal</h1>
-            <p class="skip-to-nav"><%= link_to 'skip to nav', '#nav' %></p>
-            <p class="tagline">cartoons and comics by John Pray</p>
-          </header>
         	<%= yield %>
         </div>
       </div>
