@@ -21,7 +21,7 @@
           <p class="tagline">Cartoons and comics by <%= link_to 'John Pray', 'http://johnpray.com' %></p>
 
           <h2>You are viewing</h2>
-          <form class="controls">
+          <form class="controls form-vertical">
           	<select>
           		<option>All comics</option>
           	</select>
@@ -29,7 +29,7 @@
           		<option>from new to old</option>
           	</select>
           	<noscript>
-          		<input class="btn" type="submit">Go</input>
+          		<button class="btn" type="submit" value="Go"></input>
           	</noscript>
           </form>
 
@@ -52,7 +52,7 @@
       </div>
 
       <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
+      <!-- <%= debug(params) if Rails.env.development? %> -->
     </div>
   </body>
 </html>

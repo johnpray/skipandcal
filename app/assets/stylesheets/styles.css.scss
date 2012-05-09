@@ -24,6 +24,11 @@ body {
 }
 
 #nav {
+	@include opacity(.25);
+	@include transition(opacity 0.75s linear);
+	&:hover {
+		@include opacity(1);
+	}
 	color: darken($johnGreen, 15%);
 	a {
 		color: lighten($johnGreen, 45%);
@@ -45,13 +50,17 @@ body {
 	h2 {
 		text-transform: uppercase;
 		font-size: 18px;
+		text-shadow: 0 1px 0 lighten($johnGreen, 10%);
 		a {
 			color: darken($johnGreen, 15%);
 		}
 	}
 	.controls {
 		select {
-
+			@include opacity(.5);
+			&:hover {
+				@include opacity(1);
+			}
 		}
 	}
 }
@@ -77,8 +86,9 @@ body {
 		.frame {
 			img {
 				width: 100%;
-				border: 2px solid $gray;
 			}
+			margin-bottom: 13px;
+			border: 2px solid $gray;
 		}
 	}
 	.title {
@@ -88,5 +98,25 @@ body {
 	}
 	.description {
 
+	}
+}
+
+/* footer */
+footer {
+	@include opacity(.50);
+	@include transition(opacity 0.75s linear);
+	&:hover {
+		@include opacity(1);
+	}
+	color: darken($johnGreen, 15%);
+	a {
+		color: lighten($johnGreen, 15%);
+		&:hover {
+			color: lighten($johnGreen, 15%);
+		}
+	}
+	p {
+		font-size: 10px;
+		line-height: 13px;
 	}
 }
