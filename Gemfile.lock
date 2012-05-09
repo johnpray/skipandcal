@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: 261ccd43b6c1b48a7bc2f60fe591dc698f2a7e1c
-  branch: 2.0.3
-  specs:
-    bootstrap-sass (2.0.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,8 +31,6 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
-    bootstrap-will_paginate (0.0.7)
-      will_paginate
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -132,15 +123,15 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    will_paginate (3.0.3)
+    zurb-foundation (2.2.1.1)
+      jquery-rails (>= 1.0)
+      railties (>= 3.1.0, < 4.0)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.1)
-  bootstrap-sass!
-  bootstrap-will_paginate (~> 0.0.7)
   coffee-rails (~> 3.2.2)
   jquery-rails (~> 2.0.0)
   pg (~> 0.12.2)
@@ -150,4 +141,4 @@ DEPENDENCIES
   sqlite3
   thin (~> 1.3.1)
   uglifier (>= 1.2.3)
-  will_paginate (~> 3.0.3)
+  zurb-foundation (~> 2.2.1)
