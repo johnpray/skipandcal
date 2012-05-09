@@ -1,4 +1,5 @@
 $baseFontFamily: Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+$foundationFontFamily: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;;
 
 $johnGreen: #357A24;
 $lightGray: #ccc;
@@ -23,10 +24,11 @@ header {
 	h1 {
 		color: white;
 		font-size: 35px; font-size: 3.5rem; margin-bottom: 3px;
-		text-shadow: 1px 1px 3px darken($johnGreen, 20%);
+		font-family: $foundationFontFamily;
+		letter-spacing: -1px;
 	}
 	.tagline {
-		color: darken($johnGreen, 15%);
+		color: darken($johnGreen, 10%);
 		text-transform: uppercase;
 		font-size: 18px;
 		font-size: 1.8rem;
@@ -37,6 +39,10 @@ header {
 		}
 	}
 	.skip-to-nav {
+		float: right;
+		margin: 4% 0;
+	}
+	.change-order {
 		float: right;
 		margin: 4% 0;
 	}
@@ -71,5 +77,13 @@ header {
 				}
 			}
 		}
+		.title {
+			font-size: 13px; font-size: 1.3rem; line-height: 1.25; margin: 0 0 18px;
+			font-weight: bold;
+		}
 	}
 }
+
+/* foundation tweaks */
+.block-grid.one-up { margin-left: -4% }
+.block-grid.one-up>li { margin-left: 4%; width: 96%; margin-bottom: 4%;}
