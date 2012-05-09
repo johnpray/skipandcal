@@ -9,6 +9,7 @@ class ComicsController < ApplicationController
   end
 
   def new
+    @comic = Comic.new
   end
 
   def edit

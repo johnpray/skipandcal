@@ -1,2 +1,32 @@
-<h1>Comics#new</h1>
-<p>Find me in app/views/comics/new.html.erb</p>
+<%= provide(:title, 'New comic') %>
+
+<ul class="breadcrumbs">
+	<li><a href="/">Comics</a></li>
+	<li class="current"><a href="#">New Comic</a></li>
+</ul>
+
+<ul class="comics">
+	<li class="comic-wrapper">
+		<div class="comic row">
+			<div class="comic-info seven columns">
+		    <div class="form-description">
+		      <p>Use this form to upload a new comic.</p>
+		    </div>
+
+		    <%= form_for(@comic, html: {class: 'nice', style: 'margin-bottom: 0;'}) do |f| %>
+
+		    	<%= render 'layouts/error_messages', object: f.object %>
+
+		      <%= render 'comics/fields', f: f %>
+
+		      <%= f.submit "Create comic", :class => "large green button" %>
+		      
+		    <% end %>
+		  </div>
+		  <div class="frames five columns">
+		    	<p>FRAMES</p>
+		    	<p>COLLECTIONS</p>
+		  </div>
+		</div>
+  </li>
+</ul>

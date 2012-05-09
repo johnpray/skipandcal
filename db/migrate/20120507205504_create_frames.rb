@@ -7,8 +7,7 @@ class CreateFrames < ActiveRecord::Migration
       t.integer :order
 
       t.timestamps
-
-      t.index :comic_id
     end
+    add_index :frames, :comic_id
   end
 end

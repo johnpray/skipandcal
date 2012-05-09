@@ -1,0 +1,18 @@
+<%= f.label :title %>
+<%= f.text_field :title, class: 'expand oversize input-text' %>
+<p class="form-help">The comic's full title.</p>
+
+<%= f.label :summary, "Short summary" %>
+<%= f.text_field :summary, class: 'expand input-text' %>
+<p class="form-help">A one-sentence summary. Shown on collection pages.</p>
+
+<%= f.label :description %>
+<%= f.text_area :description, rows: 20, class: 'expand' %>
+<p class="form-help">A big ol' description, covering all the bases. Format with Markdown.</p>
+
+<%= f.label :published_at, "Date originally published" %>
+<%= f.datetime_select :published_at, {ampm: true}, {style: "display: inline;"} %>
+<p class="form-help">When this comic was originally published.</p>
+
+<%= f.label :published, "#{f.check_box :published} Published?".html_safe %>
+<p class="form-help">Should this comic be shown to the public?</p>

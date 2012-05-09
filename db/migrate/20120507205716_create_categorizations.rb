@@ -5,9 +5,8 @@ class CreateCategorizations < ActiveRecord::Migration
       t.integer :category_id
 
       t.timestamps
-
-      t.index :comic_id
-      t.index :category_id
     end
+    add_index :categorizations, :comic_id
+    add_index :categorizations, :category_id
   end
 end
