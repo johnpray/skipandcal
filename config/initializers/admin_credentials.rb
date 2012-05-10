@@ -4,6 +4,6 @@ if Rails.env == "development"
 	ADMIN_REMEMBER_TOKEN = Rails.root.join("config/admin_remember_token.txt").read
 else
   ADMIN_USERNAME  = ENV['ADMIN_USERNAME']
-	ADMIN_USERNAME  = ENV['ADMIN_PASSWORD']
+	ADMIN_PASSWORD  = ENV['ADMIN_PASSWORD']
 	ADMIN_REMEMBER_TOKEN  = ENV['ADMIN_REMEMBER_TOKEN']
 end
