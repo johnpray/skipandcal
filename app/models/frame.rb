@@ -18,5 +18,5 @@ class Frame < ActiveRecord::Base
   										 content_type: ['image/jpeg', 'image/png', 'image/gif'] },
   										 presence: true
 
-  default_scope order: '"order" ASC'
+  default_scope order: '"order" ASC, created_at ASC'
 end

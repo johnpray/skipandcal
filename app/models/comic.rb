@@ -16,7 +16,7 @@ class Comic < ActiveRecord::Base
 
   def self.random
   	if (c = Comic.count) != 0
-      Comic.find(:first, :offset =>rand(c))
+      Comic.where(published: true).find(:first, :offset =>rand(c))
     end
   end
 end
