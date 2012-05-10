@@ -6,8 +6,8 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 
 gem 'will_paginate', '~> 3.0.3' # multiple pages for indexes
 gem 'redcarpet', '~> 2.1.1' # markdown
-#gem 'paperclip', '~> 3.0.2' # uploads
-#gem 'aws-sdk', '~> 1.3.4' # storage
+gem 'paperclip', '~> 3.0.2' # uploads
+gem 'aws-sdk', '~> 1.3.4' # storage
 gem 'thin', '~> 1.3.1' # faster server
 gem 'friendly_id', '~> 4.0.1' # friendly urls
 

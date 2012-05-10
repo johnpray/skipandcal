@@ -3,6 +3,7 @@
   <div class="three columns offset-by-one">
     <h2><%= link_to 'Collections', '#' %></h2>
     <ul class="unstyled">
+      <li><%= link_to "Everything", comics_path %></li>
       <li><%= link_to "John's Favs", '#' %></li>
     	<li><%= link_to 'All Skip & Cal', '#' %></li>
     	<li><%= link_to 'All Editorial Cartoons', '#' %></li>
@@ -15,9 +16,9 @@
   <div class="three columns">
     <h2>Other Things</h2>
     <ul class="unstyled">
-    	<li><%= link_to 'About', '#' %></li>
+    	<li><%= link_to 'About', about_path %></li>
     	<li><%= link_to "Contact", '#' %></li>
-    	<li><%= link_to "Twitter", '#' %></li>
+    	<li><%= link_to "Twitter", 'http://twitter.com/LouieGeetoo' %></li>
     </ul>
     <p>All content &copy; 2005-<%= Time.now.year %> John P. Pray (LouieGeetoo), excluding characters and concepts owned by other entities.</p>
   </div>
