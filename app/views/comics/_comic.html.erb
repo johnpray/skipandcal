@@ -1,20 +1,5 @@
 <li class="comic-wrapper">
 	<div class="comic row">
-		<div class="info twelve columns">
-			<p class="permalink">
-				<% if admin? %>
-					<%= link_to 'edit', edit_comic_path(comic) %> / 
-					<%= link_to 'delete', comic, method: :delete, confirm: "Woah, wait a minute. Are you sure?"%> / 
-				<% end %>
-				<%= link_to 'permalink', comic_path(comic) %>
-			</p>
-			<p class="date">
-				<%= link_to((comic.published_at.to_formatted_s(:long) || comic.created_at.to_formatted_s(:long)), comic_path(comic)) %>
-				<% if admin? && !comic.published? %>
-					 - <span style="color: red;">NOT PUBLISHED</span>
-				<% end %>
-			</p>
-		</div>
 		<div class="twelve columns">
 			<ul class="frames block-grid mobile <%= (comic.frames.count > 1) ? 'two-up' : 'one-up' %>">
 				<% i = 0 %>
@@ -25,7 +10,14 @@
 				</li>
 				<% end %>
 			</ul>
-			<p class="title"><strong><%= markdown_inline comic.title %></strong></p>
+			<p class="permalink">
+				<% if admin? %>
+					<%= link_to 'edit', edit_comic_path(comic) %> / 
+					<%= link_to 'delete', comic, method: :delete, confirm: "Woah, wait a minute. Are you sure?"%> / 
+				<% end %>
+				<%= link_to 'permalink', comic_path(comic) %>
+			</p>
+			<p class="title-and-date"><strong class="title"><%= link_to comic.title, comic %></strong><span class="date"> &mdash; <%= comic.published_at.to_date.to_formatted_s(:long) || comic.created_at.to_date.to_formatted_s(:long) %></span></p>
 			<div class="description">
 				<%= markdown comic.description %>
 			</div>

@@ -9,11 +9,11 @@
       <%= render 'layouts/ie6_warning' %>
       <%= render 'layouts/flash', flash: flash %>
       <header class="row" id="header">
-        <div class="eight phone-three columns offset-by-one">
+        <div class="ten phone-three columns">
           <h1><a href="/">Skip &amp; Cal</a></h1>
           <p class="tagline">cartoons and comics by John Pray</p>
         </div>
-        <div class="two phone-one columns end">
+        <div class="two phone-one columns">
           <%= link_to 'skip to nav', '#nav', class: 'skip-to-nav small radius green button' %>
 
           <% if controller.controller_name == 'comics' && controller.action_name == 'index' %>
@@ -28,7 +28,7 @@
       </header>
 
       <div class="row" id="content">
-      	<div class="ten columns offset-by-one">
+      	<div class="twelve columns">
         	<%= yield %>
         </div>
       </div>

@@ -7,6 +7,9 @@ Skipandcal::Application.routes.draw do
   root to: redirect('/comics')
 
   match '/about', to: 'static_pages#about'
+  match '/login', to: 'sessions#new'
+  match '/logout', to: 'sessions#destroy', via: :delete
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -61,7 +61,6 @@ class ComicsController < ApplicationController
 
     def admin
       if !admin?
-        flash[:warning] = "Sorry, but you're not authorized to do that."
         redirect_to root_path
       end
     end

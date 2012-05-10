@@ -79,18 +79,6 @@ label {
 		}
 	}
 	.comic {
-		.info {
-			font-style: italic;
-			color: gray;
-			.permalink {
-				float: right;
-			}
-			.date {
-				a {
-					color: gray;
-				}
-			}
-		}
 		.frames {
 			margin-bottom: 0;
 			.frame {
@@ -100,6 +88,19 @@ label {
 			}
 		}
 		.title {
+			a {
+				color: black;
+				font-weight: bold;
+			}
+			font-size: 18px; font-size: 1.8rem;
+		}
+		.date {
+			font-style: italic;
+			color: gray;
+		}
+		.permalink {
+			float: right;
+			font-style: italic;
 		}
 	}
 }

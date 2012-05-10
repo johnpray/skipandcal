@@ -1,6 +1,8 @@
 class FramesController < ApplicationController
 
- def index
+	before_filter :admin
+
+	def index
     @comic = Comic.find(params[:comic_id])
     @frames = @comic.frames
   end
@@ -49,5 +51,13 @@ class FramesController < ApplicationController
     flash[:success] = "Frame destroyed now and forever."
     redirect_to comic_frames_path(frame.comic)
   end
+
+  private
+
+    def admin
+      if !admin?
+        redirect_to root_path
+      end
+    end
 
 end

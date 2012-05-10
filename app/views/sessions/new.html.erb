@@ -1,0 +1,26 @@
+<%= provide(:title, 'Log in') %>
+
+<ul class="comics">
+	<li class="comic-wrapper">
+		<div class="comic row">
+			<div class="comic-info ten columns">
+		    <%= form_for(:session, url: sessions_path, html: {class: 'nice', style: 'margin-bottom: 0;'}) do |f| %>
+
+		    	<%= f.label :username %>
+					<%= f.text_field :username, class: 'expand oversize input-text', required: 'required' %>
+
+					<%= f.label :password %>
+					<%= f.password_field :password, class: 'expand input-text', required: 'required' %>
+
+		      <%= f.submit "Log in", :class => "large green button" %>
+		      
+		    <% end %>
+		  </div>
+		  <br />
+		  <div class="frames two columns">
+		  		<div style="text-align: center;"><%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/256px-HAL9000.svg.png' %></div>
+		    	<div class="form-help" style="text-align: center;">Please identify.</div>
+		  </div>
+		</div>
+  </li>
+</ul>

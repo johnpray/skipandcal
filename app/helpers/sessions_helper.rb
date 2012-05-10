@@ -1,5 +1,5 @@
 module SessionsHelper
 	def admin?
-		true
+		cookies[:remember_token] == ADMIN_REMEMBER_TOKEN
 	end
 end
