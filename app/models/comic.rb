@@ -8,4 +8,9 @@ class Comic < ActiveRecord::Base
 
   has_many :categorizations
   has_many :categories, through: :categorizations
+
+  default_scope order: 'published_at DESC'
+  self.per_page = 3
+
+  validates :published_at,	presence: true
 end

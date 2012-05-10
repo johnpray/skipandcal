@@ -65,7 +65,7 @@ label {
 	}
 }
 
-/* comic */
+/* comics */
 .comic-wrapper {
 	padding: 4%;
 	background: white;
@@ -85,6 +85,11 @@ label {
 			.permalink {
 				float: right;
 			}
+			.date {
+				a {
+					color: gray;
+				}
+			}
 		}
 		.frames {
 			margin-bottom: 0;
@@ -99,6 +104,7 @@ label {
 	}
 }
 
+/* bottom nav */
 #nav {
 	color: darken($johnGreen, 15%);
 	margin-top: 13px;

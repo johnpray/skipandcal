@@ -9,7 +9,7 @@
 				<%= link_to 'permalink', comic_path(comic) %>
 			</p>
 			<p class="date">
-				<%= comic.published_at.to_date.to_formatted_s(:long) || comic.created_at.to_date.to_formatted_s(:long) %>
+				<%= link_to((comic.published_at.to_formatted_s(:long) || comic.created_at.to_formatted_s(:long)), comic_path(comic)) %>
 				<% if admin? && !comic.published? %>
 					 - <span style="color: red;">NOT PUBLISHED</span>
 				<% end %>

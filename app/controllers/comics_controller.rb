@@ -1,13 +1,22 @@
 class ComicsController < ApplicationController
 
-  #before_filter :admin,  except: [:index, :show]
+  before_filter :admin,  except: [:index, :show]
 
   def index
-    @comics = Comic.all
+    if params[:order] == "old-first"
+      @comics = admin? ? Comic.unscoped.page(params[:page]).order('published_at ASC') : Comic.unscoped.where(published: true).page(params[:page]).order('published_at ASC')
+    else
+      @comics = admin? ? Comic.page(params[:page]) : Comic.where(published: true).page(params[:page])
+    end
   end
 
   def show
     @comic = Comic.find(params[:id])
+
+    if !admin? && !@comic.published
+      flash[:error] = "You don't have access to that. Sorry."
+      redirect_to comics_path
+    end
 
     if request.path != comic_path(@comic)
       redirect_to @comic, status: :moved_permanently
@@ -47,4 +56,13 @@ class ComicsController < ApplicationController
     flash[:success] = "Comic obliterated."
     redirect_to comics_path
   end
+
+  private
+
+    def admin
+      if !admin?
+        flash[:warning] = "Sorry, but you're not authorized to do that."
+        redirect_to root_path
+      end
+    end
 end

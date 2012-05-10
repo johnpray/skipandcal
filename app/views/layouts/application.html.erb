@@ -15,7 +15,15 @@
         </div>
         <div class="two phone-one columns end">
           <%= link_to 'skip to nav', '#nav', class: 'skip-to-nav small radius green button' %>
-          <%= link_to 'old to new', '', class: 'change-order small radius white button' %>
+
+          <% if controller.controller_name == 'comics' && controller.action_name == 'index' %>
+            <% if params[:order] == 'old-first' %>
+              <%= link_to 'new first', comics_path(category: params[:category]), class: 'change-order small radius white button' %>
+            <% else %>
+              <%= link_to 'old first', comics_path(order: 'old-first', category: params[:category]), class: 'change-order small radius white button' %>
+            <% end %>
+          <% end %>
+
         </div>
       </header>
 
