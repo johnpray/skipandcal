@@ -12,7 +12,7 @@
 
 <%= f.label :published_at, "Date originally published" %>
 <%= f.datetime_select :published_at, {ampm: true}, {style: "display: inline;"} %>
-<p class="form-help">When this comic was originally published.</p>
+<p class="form-help">When was this comic was originally published? (in Eastern time)</p>
 
 <%= f.label :published, "#{f.check_box :published} Published?".html_safe %>
 <p class="form-help">Should this comic be shown to the public?</p>

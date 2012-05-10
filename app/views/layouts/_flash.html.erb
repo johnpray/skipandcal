@@ -1,8 +1,12 @@
-<% flash.each do |key, value| %>
-  <% if !value.nil? && !value.empty? && key != :recaptcha_error %>
-  <div class="alert-box <%= key %>">
-    <%= value %>
-    <a class='close' href='#'>&times;</a>
-  </div>
-  <% end %>
-<% end %>
+<div class="row">
+	<div class="ten columns offset-by-one end">
+		<% flash.each do |key, value| %>
+		  <% if !value.nil? && !value.empty? && key != :recaptcha_error %>
+		  <div class="alert-box <%= key %>">
+		    <%= value %>
+		    <a class='close' href='#'>&times;</a>
+		  </div>
+		  <% end %>
+		<% end %>
+	</div>
+</div>

@@ -1,5 +1,7 @@
 <ul class="comics">
 	<% @comics.each do |comic| %>
-		<%= render 'comics/comic', comic: comic %>
+		<%= render('comics/comic', comic: comic) unless !comic.published? && !admin? %>
 	<% end %>
 </ul>
+
+<%= link_to('Add new comic', new_comic_path, class: "medium green radius button") if admin? %>
