@@ -32,7 +32,8 @@
 
   <div class="four columns">
     <h2>Random Comic</h2>
-    <%= image_tag 'http://media.tumblr.com/tumblr_l5cycwGpRU1qcoall.png', style: 'width: 100%' %>
+    <% random_comic = Comic.random %>
+    <%= link_to image_tag(random_comic.frames.first.image.url(:medium), style: 'width: 100%'), random_comic, title: "#{random_comic.summary} (Click to read)" %>
   </div>
 
 </nav>

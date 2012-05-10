@@ -13,4 +13,10 @@ class Comic < ActiveRecord::Base
   self.per_page = 3
 
   validates :published_at,	presence: true
+
+  def self.random
+  	if (c = Comic.count) != 0
+      Comic.find(:first, :offset =>rand(c))
+    end
+  end
 end
