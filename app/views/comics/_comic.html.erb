@@ -16,16 +16,15 @@
 			</p>
 		</div>
 		<div class="twelve columns">
-			<!--
 			<ul class="frames block-grid mobile <%= (comic.frames.count > 1) ? 'two-up' : 'one-up' %>">
+				<% i = 0 %>
 				<% comic.frames.each do |frame| %>
-				<li class="frame">
-					<%= image_tag frame.image.url(:display), alt: frame.alt_text, title: frame.title_text %>
+				<% i += 1 %>
+				<li class="frame" style="<%= (i == 3) ? 'clear: left;' : '' %>">
+					<%= image_tag frame.image.url(:medium), alt: frame.alt_text, title: frame.title_text %>
 				</li>
 				<% end %>
 			</ul>
-		-->
-			<h2>Soon there will be frames here</h2>
 			<p class="title"><strong><%= markdown_inline comic.title %></strong></p>
 			<div class="description">
 				<%= markdown comic.description %>

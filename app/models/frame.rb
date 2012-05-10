@@ -1,5 +1,7 @@
 class Frame < ActiveRecord::Base
-  attr_accessible :alt_text, :comic_id, :order, :title_text
+  attr_accessible :alt_text, :comic_id, :order, :title_text, :image
+
+  belongs_to :comic
 
   has_attached_file :image,
 									styles: {
@@ -16,5 +18,5 @@ class Frame < ActiveRecord::Base
   										 content_type: ['image/jpeg', 'image/png', 'image/gif'] },
   										 presence: true
 
-  default_scope order: 'order ASC'
+  default_scope order: '"order" ASC'
 end

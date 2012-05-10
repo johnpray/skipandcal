@@ -1,0 +1,23 @@
+<%= provide(:title, 'Add a frame') %>
+
+<ul class="comics">
+	<li class="comic-wrapper">
+		<div class="comic row">
+			<div class="comic-info twelve columns">
+		    <div class="form-description">
+		      <p class="title"><strong>Adding a frame to <%= link_to @comic.title, @comic %>.</strong></p>
+		    </div>
+
+		    <%= form_for([@comic, @frame], html: {multipart: true, class: 'nice', style: 'margin-bottom: 0;'}) do |f| %>
+
+		    	<%= render 'layouts/error_messages', object: f.object %>
+
+		      <%= render 'frames/fields', f: f %>
+
+		      <%= f.submit "Add frame", :class => "large green button" %>
+		      
+		    <% end %>
+		  </div>
+		</div>
+  </li>
+</ul>

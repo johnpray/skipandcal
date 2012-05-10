@@ -1,0 +1,18 @@
+<%= f.label :image %>
+<% if f.object.image.file? %>
+<%= image_tag f.object.image.url(:large) %>
+<% end %>
+<%= f.file_field :image %>
+<br /><br />
+
+<%= f.label :alt_text %>
+<%= f.text_field :alt_text, class: 'expand oversize input-text' %>
+<p class="form-help">For screen readers and search engines.</p>
+
+<%= f.label :title_text %>
+<%= f.text_field :title_text, class: 'expand oversize input-text' %>
+<p class="form-help">To appear on mouseover. (Just remember, touch screen users won't see it!)</p>
+
+<%= f.label :order %>
+<%= f.text_field :order, class: 'expand oversize input-text', type: "number" %>
+<p class="form-help">In case frames get uploaded out of order, the priority this one should have (1 comes before 2).</p>

@@ -1,0 +1,20 @@
+<div class="comic-wrapper">
+	<div class="comic row">
+		<div class="twelve columns">
+			<p class="title"><strong>Managing frames for <%= link_to @comic.title, @comic %></strong></p>
+			<ul class="frames block-grid mobile <%= (@frames.count > 1) ? 'two-up' : 'one-up' %>">
+				<% @frames.each do |frame| %>
+				<li class="frame">
+					<%= image_tag frame.image.url(:medium), alt: frame.alt_text, title: frame.title_text %>
+					<br />
+					<%= link_to "Edit", edit_frame_path(frame), class: "small green radius button" %>
+					<%= link_to "Delete", edit_frame_path(frame), class: "small white radius button" %>
+				</li>
+				<% end %>
+			</ul>
+			<%= link_to "Add a frame", new_comic_frame_path(@comic), class: "medium green radius button", style: "color: white" %>
+			<%= link_to "Return to comic", comic_path(@comic), class: "medium white radius button" %>
+		</div>
+	</div>
+</div>
+<br />
