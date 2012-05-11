@@ -1,6 +1,13 @@
 Skip & Cal
 ==========
 
-This repository contains the Ruby on Rails source code for [skipandcal.net](http://skipandcal.net).
+This repository contains the source code for [skipandcal.net](http://skipandcal.net).
 
-Feel free to make use of it as you see fit (minus any images of my characters or comics).
+This website uses the [Ruby on Rails 3.2](http://rubyonrails.org/) web developent framework and the [ZURB Foundation](http://foundation.zurb.com/) web design framework. The site itself is happily hosted on [Heroku](http://www.heroku.com/).
+
+Feel free to make use of the code as you see fit.
+
+TODO
+----
+
+- Add RSS/Atom feed

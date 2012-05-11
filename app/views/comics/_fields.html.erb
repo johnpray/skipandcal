@@ -11,7 +11,7 @@
 <p class="form-help">A big ol' description, covering all the bases. Format with Markdown.</p>
 
 <%= f.label :published_at, "Date originally published" %>
-<%= f.datetime_select :published_at, {ampm: true}, {style: "display: inline;"} %>
+<%= f.datetime_select :published_at, {ampm: true, start_year: 1989, end_year: 1.year.from_now.year}, {style: "display: inline;"} %>
 <p class="form-help">When was this comic was originally published? (in Eastern time)</p>
 
 <%= f.label :published, "#{f.check_box :published} Published?".html_safe %>

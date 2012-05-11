@@ -6,4 +6,6 @@ class Category < ActiveRecord::Base
 
   has_many :categorizations
   has_many :comics, through: :categorizations
+
+  default_scope order: 'name ASC'
 end

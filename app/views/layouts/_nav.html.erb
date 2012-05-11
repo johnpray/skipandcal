@@ -1,7 +1,7 @@
 <nav><div class="row" id="nav">
 
   <div class="four columns">
-    <h2><%= link_to 'Categories', '#' %></h2>
+    <h2>Categories</h2>
     <ul class="unstyled">
       <li><%= link_to "Everything", comics_path %></li>
       <% Category.all.each do |category| %>
@@ -14,7 +14,6 @@
     <h2>Other Things</h2>
     <ul class="unstyled">
     	<li><%= link_to 'About', about_path %></li>
-    	<li><%= link_to "Contact", '#' %></li>
     	<li><%= link_to "Twitter", 'http://twitter.com/LouieGeetoo' %></li>
     </ul>
     <p>All content &copy; 2005-<%= Time.now.year %> John P. Pray (LouieGeetoo), excluding characters and concepts owned by other entities.</p>
