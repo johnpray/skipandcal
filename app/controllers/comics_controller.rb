@@ -3,10 +3,35 @@ class ComicsController < ApplicationController
   before_filter :admin,  except: [:index, :show]
 
   def index
-    if params[:order] == "old-first"
-      @comics = admin? ? Comic.unscoped.page(params[:page]).order('published_at ASC') : Comic.unscoped.where(published: true).page(params[:page]).order('published_at ASC')
+    if params[:collection]
+      @category = Category.find(params[:collection])
+      if params[:order] == "old-first"
+        if admin?
+          @comics = @category.comics.reorder('published_at ASC').page(params[:page])
+        else
+          @comics = @category.comics.where(published: true).reorder('published_at ASC').page(params[:page])
+        end
+      else
+        if admin?
+          @comics = @category.comics.page(params[:page])
+        else
+          @comics = @category.comics.where(published: true).page(params[:page])
+        end
+      end
     else
-      @comics = admin? ? Comic.page(params[:page]) : Comic.where(published: true).page(params[:page])
+      if params[:order] == "old-first"
+        if admin?
+          @comics = Comic.reorder('published_at ASC').page(params[:page])
+        else
+          @comics = Comic.where(published: true).reorder('published_at ASC').page(params[:page])
+        end
+      else
+        if admin?
+          @comics = Comic.page(params[:page])
+        else
+          @comics = Comic.where(published: true).page(params[:page])
+        end
+      end
     end
   end
 

@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    redirect_to comics_path(collection: @category.slug)
   end
 
   def new

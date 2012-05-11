@@ -4,12 +4,9 @@
     <h2><%= link_to 'Collections', '#' %></h2>
     <ul class="unstyled">
       <li><%= link_to "Everything", comics_path %></li>
-      <li><%= link_to "John's Favs", '#' %></li>
-    	<li><%= link_to 'All Skip & Cal', '#' %></li>
-    	<li><%= link_to 'All Editorial Cartoons', '#' %></li>
-    	<li><%= link_to "Fan Comics and Nintendon'ts", '#' %></li>
-    	<li><%= link_to "For the Cardinal Courier (S&C and Ed. 2007-2011)", '#' %></li>
-    	<li><%= link_to "Miscellaneous Comics and Doodles", '#' %></li>
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, category %></li>
+      <% end %>
     </ul>
   </div>
 

@@ -6,28 +6,30 @@
 				<% comic.frames.each do |frame| %>
 				<% i += 1 %>
 				<li class="frame" style="<%= (i == 3) ? 'clear: left;' : '' %>">
-					<%= image_tag frame.image.url(:medium), alt: frame.alt_text, title: frame.title_text %>
+					<%= image_tag frame.image.url((comic.frames.count > 1) ? :medium : :large), alt: frame.alt_text, title: frame.title_text %>
 				</li>
 				<% end %>
 			</ul>
-			<p class="permalink">
-				<% if admin? %>
-					<%= link_to 'edit', edit_comic_path(comic) %> / 
-					<%= link_to 'frames', comic_frames_path(comic) %> / 
-					<%= link_to 'delete', comic, method: :delete, confirm: "Woah, wait a minute. Are you sure?"%> / 
-				<% end %>
-				<%= link_to 'permalink', comic_path(comic) %>
-			</p>
-			<p class="title-and-date">
-				<strong class="title"><%= link_to comic.title, comic %></strong>
-				<span class="date"> &mdash; <%= comic.published_at.to_date.to_formatted_s(:long) || comic.created_at.to_date.to_formatted_s(:long) %></span>
-				<% if admin? && !comic.published? %><span style="color: red;">(NOT PUBLISHED)</span><% end %>
-			</p>
-			<div class="description">
-				<%= markdown comic.description %>
-			</div>
-			<div class="categories">
-				<i><b>Collections:</b> <%= category_links_list(comic) %></i>
+			<div class="comic-info">
+				<p class="permalink">
+					<% if admin? %>
+						<%= link_to 'edit', edit_comic_path(comic) %> / 
+						<%= link_to 'frames', comic_frames_path(comic) %> / 
+						<%= link_to 'delete', comic, method: :delete, confirm: "Woah, wait a minute. Are you sure?"%> / 
+					<% end %>
+					<%= link_to 'permalink', comic_path(comic) %>
+				</p>
+				<p class="title-and-date">
+					<strong class="title"><%= link_to comic.title, comic %></strong>
+					<span class="date"> &mdash; <%= comic.published_at.to_date.to_formatted_s(:long) || comic.created_at.to_date.to_formatted_s(:long) %></span>
+					<% if admin? && !comic.published? %><span style="color: red;">(NOT PUBLISHED)</span><% end %>
+				</p>
+				<div class="description">
+					<%= markdown comic.description %>
+				</div>
+				<div class="categories">
+					<i><b>Collections:</b> <%= category_links_list(comic) %></i>
+				</div>
 			</div>
 		</div>
 	</div>

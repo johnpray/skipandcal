@@ -10,7 +10,7 @@ class Comic < ActiveRecord::Base
   has_many :categories, through: :categorizations
 
   default_scope order: 'published_at DESC'
-  self.per_page = 3
+  self.per_page = 4
 
   validates :published_at,	presence: true
 

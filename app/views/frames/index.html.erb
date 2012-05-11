@@ -5,7 +5,7 @@
 			<ul class="frames block-grid mobile <%= (@frames.count > 1) ? 'two-up' : 'one-up' %>">
 				<% @frames.each do |frame| %>
 				<li class="frame">
-					<%= image_tag frame.image.url(:medium), alt: frame.alt_text, title: frame.title_text %>
+					<%= image_tag frame.image.url((@frames.count > 1) ? :medium : :large), alt: frame.alt_text, title: frame.title_text %>
 					<br />
 					<%= link_to "Edit", edit_frame_path(frame), class: "small green radius button" %>
 					<%= link_to "Delete", edit_frame_path(frame), class: "small white radius button" %>

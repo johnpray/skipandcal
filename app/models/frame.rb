@@ -5,7 +5,7 @@ class Frame < ActiveRecord::Base
 
   has_attached_file :image,
 									styles: {
-										large: '800x800>',
+										large: '1000x1000>',
 										medium: '500x500>',
 										small: '300x300>',
 										thumb: '300x300#'
