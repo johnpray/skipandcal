@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 	def new
+    if admin?
+      flash[:success] = "Welcome back, Master. You are already logged in. Awaiting further instructions."
+      redirect_to root_path
+    end
 	end
 
   def create

@@ -51,13 +51,4 @@ class FramesController < ApplicationController
     flash[:success] = "Frame destroyed now and forever."
     redirect_to comic_frames_path(frame.comic)
   end
-
-  private
-
-    def admin
-      if !admin?
-        redirect_to root_path
-      end
-    end
-
 end

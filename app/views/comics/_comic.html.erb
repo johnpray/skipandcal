@@ -13,6 +13,7 @@
 			<p class="permalink">
 				<% if admin? %>
 					<%= link_to 'edit', edit_comic_path(comic) %> / 
+					<%= link_to 'frames', comic_frames_path(comic) %> / 
 					<%= link_to 'delete', comic, method: :delete, confirm: "Woah, wait a minute. Are you sure?"%> / 
 				<% end %>
 				<%= link_to 'permalink', comic_path(comic) %>
@@ -24,6 +25,9 @@
 			</p>
 			<div class="description">
 				<%= markdown comic.description %>
+			</div>
+			<div class="categories">
+				<i><b>Collections:</b> <%= category_links_list(comic) %></i>
 			</div>
 		</div>
 	</div>

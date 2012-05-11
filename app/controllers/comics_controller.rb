@@ -57,11 +57,4 @@ class ComicsController < ApplicationController
     redirect_to comics_path
   end
 
-  private
-
-    def admin
-      if !admin?
-        redirect_to root_path
-      end
-    end
 end

@@ -3,13 +3,16 @@ Skipandcal::Application.routes.draw do
   resources :comics do
     resources :frames, shallow: true
   end
+  resources :categories, path: :collections
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: redirect('/comics')
 
   match '/about', to: 'static_pages#about'
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
-  resources :sessions, only: [:new, :create, :destroy]
+  match '/skip-and-cal', to: redirect('/collections/skip-and-cal')
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,5 +1,5 @@
 class Comic < ActiveRecord::Base
-  attr_accessible :description, :summary, :title, :published_at, :published
+  attr_accessible :description, :summary, :title, :published_at, :published, :category_ids
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]

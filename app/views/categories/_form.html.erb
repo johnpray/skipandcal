@@ -1,0 +1,28 @@
+<ul class="comics">
+	<li class="comic-wrapper">
+		<div class="comic row">
+			<div class="comic-info seven columns">
+
+		    <%= form_for(@category, html: {class: 'nice', style: 'margin-bottom: 0;'}) do |f| %>
+
+		    	<%= render 'layouts/error_messages', object: f.object %>
+
+		      <%= f.label :name %>
+					<%= f.text_field :name, class: 'expand oversize input-text' %>
+					<p class="form-help">The collection's name.</p>
+
+					<%= f.label :summary, "Short summary" %>
+					<%= f.text_field :summary, class: 'expand input-text' %>
+					<p class="form-help">A one-sentence summary. Shown on collection index page.</p>
+
+					<%= f.label :description %>
+					<%= f.text_area :description, rows: 20, class: 'expand' %>
+					<p class="form-help">A big ol' description, covering all the bases. Format with Markdown.</p>
+
+		      <%= f.submit "Save collection", :class => "large green button" %>
+		      
+		    <% end %>
+		  </div>
+		</div>
+  </li>
+</ul>

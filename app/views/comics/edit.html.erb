@@ -3,30 +3,39 @@
 <ul class="breadcrumbs">
 	<li><a href="/">Comics</a></li>
 	<li><%= link_to @comic.title, @comic %></li>
-	<li class="current"><a href="#">New Comic</a></li>
+	<li class="current"><a href="#">Edit Comic</a></li>
 </ul>
-
+<%= form_for(@comic, html: {class: 'nice', style: 'margin: 0;'}) do |f| %>
 <ul class="comics">
 	<li class="comic-wrapper">
 		<div class="comic row">
-			<div class="comic-info seven columns">
+			
+				<div class="comic-info seven columns">
 
-		    <%= form_for(@comic, html: {class: 'nice', style: 'margin-bottom: 0;'}) do |f| %>
+			    	<%= render 'layouts/error_messages', object: f.object %>
 
-		    	<%= render 'layouts/error_messages', object: f.object %>
+			      <%= render 'comics/fields', f: f %>
 
-		      <%= render 'comics/fields', f: f %>
-
-		      <%= f.submit "Update comic", :class => "large green button" %>
-		      
-		    <% end %>
-		  </div>
-		  <div class="frames five columns">
-		    	<p>
-		    		<%= link_to "Manage frames", comic_frames_path(@comic), class: "large green radius button" %>
+			      <%= f.submit "Update comic", :class => "large green radius button" %>
+			      
+			  </div>
+			  <div class="frames five columns">
+		    	<label>Collections</label>
+		    	<ul class="comic_categories">
+			    	<% Category.all.each do |category| %>
+			    		<li class="comic_category">
+				    	<%= check_box_tag 'comic[category_ids][]', category.id, @comic.categories.include?(category) %>
+				    	<%= category.name %>
+				    	</li>
+				    <% end %>
+				  </ul>
+				  <label>Frames</label>
+				  <p>
+		    		<%= link_to "Manage frames", comic_frames_path(@comic), class: "medium green radius button", target: '_blank' %>
 		    	</p>
-		    	<p>COLLECTIONS</p>
-		  </div>
+			  </div>
+		  
 		</div>
   </li>
 </ul>
+<% end %>
