@@ -63,6 +63,17 @@ label {
 	a {
 		color: $johnGreen;
 	}
+	.current {
+		font-weight: bold;
+	}
+}
+ul.breadcrumbs li a, ul.breadcrumbs li span {
+	text-transform: uppercase;
+	font-size: 13px; font-size: 1.3rem;
+	padding-left: 13px;
+}
+ul.breadcrumbs li::before {
+	content: "»";
 }
 
 /* pagination */
