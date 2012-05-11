@@ -1,4 +1,4 @@
-<nav class="row" id="nav">
+<nav><div class="row" id="nav">
 
   <div class="four columns">
     <h2><%= link_to 'Categories', '#' %></h2>
@@ -33,4 +33,4 @@
     <%= link_to image_tag(random_comic.frames.first.image.url(:medium), style: 'width: 100%'), random_comic, title: "#{random_comic.summary} (Click to read)" unless random_comic.nil? || random_comic.frames.count < 1 %>
   </div>
 
-</nav>
+</div></nav>

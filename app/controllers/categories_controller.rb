@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_filter :admin, except: [:index, :show]
 
   def index
-    @categories = Category.all
+    redirect_to root_path
   end
 
   def show
