@@ -3,8 +3,8 @@ class ComicsController < ApplicationController
   before_filter :admin,  except: [:index, :show]
 
   def index
-    if params[:collection]
-      @category = Category.find(params[:collection])
+    if params[:category]
+      @category = Category.find(params[:category])
       if params[:order] == "old-first"
         if admin?
           @comics = @category.comics.reorder('published_at ASC').page(params[:page])

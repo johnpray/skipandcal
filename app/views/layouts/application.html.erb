@@ -18,9 +18,9 @@
 
           <% if controller.controller_name == 'comics' && controller.action_name == 'index' %>
             <% if params[:order] == 'old-first' %>
-              <%= link_to 'see newest', url_for(collection: params[:collection]), class: 'change-order small radius green button' %>
+              <%= link_to 'see newest', url_for(category: params[:category]), class: 'change-order small radius green button' %>
             <% else %>
-              <%= link_to 'see oldest', url_for(order: 'old-first', collection: params[:collection]), class: 'change-order small radius green button' %>
+              <%= link_to 'see oldest', url_for(order: 'old-first', category: params[:category]), class: 'change-order small radius green button' %>
             <% end %>
           <% end %>
 

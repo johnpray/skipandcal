@@ -3,7 +3,7 @@ Skipandcal::Application.routes.draw do
   resources :comics do
     resources :frames, shallow: true
   end
-  resources :categories, path: :collections
+  resources :categories, path: :categories
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: redirect('/comics')
@@ -11,7 +11,6 @@ Skipandcal::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
-  match '/skip-and-cal', to: redirect('/collections/skip-and-cal')
 
 
   # The priority is based upon order of creation:
@@ -35,7 +34,7 @@ Skipandcal::Application.routes.draw do
   #       post 'toggle'
   #     end
   #
-  #     collection do
+  #     category do
   #       get 'sold'
   #     end
   #   end
@@ -50,7 +49,7 @@ Skipandcal::Application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get 'recent', :on => :collection
+  #       get 'recent', :on => :category
   #     end
   #   end
 

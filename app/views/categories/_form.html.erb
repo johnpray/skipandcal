@@ -9,17 +9,17 @@
 
 		      <%= f.label :name %>
 					<%= f.text_field :name, class: 'expand oversize input-text' %>
-					<p class="form-help">The collection's name.</p>
+					<p class="form-help">The category's name.</p>
 
 					<%= f.label :summary, "Short summary" %>
 					<%= f.text_field :summary, class: 'expand input-text' %>
-					<p class="form-help">A one-sentence summary. Shown on collection index page.</p>
+					<p class="form-help">A one-sentence summary. Shown on category index page.</p>
 
 					<%= f.label :description %>
 					<%= f.text_area :description, rows: 20, class: 'expand' %>
 					<p class="form-help">A big ol' description, covering all the bases. Format with Markdown.</p>
 
-		      <%= f.submit "Save collection", :class => "large green button" %>
+		      <%= f.submit "Save category", :class => "large green button" %>
 		      
 		    <% end %>
 		  </div>
