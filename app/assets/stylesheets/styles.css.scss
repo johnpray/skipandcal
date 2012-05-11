@@ -65,6 +65,11 @@ label {
 	}
 }
 
+/* pagination */
+.previous_page.disabled, .next_page.disabled {
+	display: none;
+}
+
 /* comics */
 .comic-wrapper {
 	padding: 4%;

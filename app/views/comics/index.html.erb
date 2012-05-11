@@ -4,7 +4,7 @@
 		<li class="current"><%= link_to @category.name, @category %></li>
 	</ul>
 <% end %>
-<% if params[:page] && params[:page] != 1 %>
+<% if params[:page] && params[:page] != '1' %>
 	<div class="row">
 		<%= will_paginate @comics,
 			previous_label: content_tag(:span, "« back", class: "medium green radius button", style: 'float: left; margin-bottom: 13px;'),
@@ -25,4 +25,4 @@
 %>
 <div class="clearfix"></div>
 
-<%= link_to('Add a new comic', new_comic_path, class: "large nice green radius button") if admin? %>
+<%= link_to('Add a new comic', new_comic_path, class: "large white radius button") if admin? %>
