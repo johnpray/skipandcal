@@ -2,7 +2,7 @@
 <html>
 	<head>
 	  <%= render 'layouts/head' %>
-	  <%= render 'layouts/analytics' if Rails.env.production? %>
+	  <%= render 'layouts/analytics' if Rails.env.production? && !admin? %>
 	</head>
 	<body>
 		<div class="container" id="content-container">
@@ -37,7 +37,5 @@
       <%= render 'layouts/nav' %>
 
     </div>
-
-      <!-- <%= debug(params) if Rails.env.development? %> -->
   </body>
 </html>
