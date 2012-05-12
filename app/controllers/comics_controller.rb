@@ -37,6 +37,7 @@ class ComicsController < ApplicationController
 
   def show
     @comic = Comic.find(params[:id])
+    @category = Category.find(params[:category]) if params[:category]
 
     if !admin? && !@comic.published
       flash[:error] = "You don't have access to that. Sorry."

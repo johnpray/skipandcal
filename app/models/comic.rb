@@ -19,4 +19,20 @@ class Comic < ActiveRecord::Base
       Comic.where(published: true).find(:first, :offset =>rand(c))
     end
   end
+
+  def next(category = nil)
+    if !category.nil?
+      category.comics.where("published_at > ?", published_at).last
+    else
+      Comic.where("published_at > ?", published_at).last
+    end
+  end
+
+  def previous(category = nil)
+    if !category.nil?
+      category.comics.where("published_at < ?", published_at).first
+    else
+      Comic.where("published_at < ?", published_at).first
+    end
+  end
 end
