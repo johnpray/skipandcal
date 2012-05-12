@@ -27,6 +27,9 @@
 				<div class="description">
 					<%= markdown comic.description %>
 				</div>
+				<% if comic.categories.include?(Category.find('cardinal-courier')) %>
+				<p><i>This cartoon or comic originally appeared in the </i><%= link_to "Cardinal Courier", 'http://www.cardinalcourieronline.com' %><i>, the award-winning student-run newspaper at <%= link_to 'St. John Fisher College', 'http://www.sjfc.edu' %>, my alma mater.</i></p>
+				<% end %>
 				<div class="categories">
 					<i><b>Categories:</b> <%= category_links_list(comic) %></i>
 				</div>
