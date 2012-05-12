@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511174336) do
+ActiveRecord::Schema.define(:version => 20120512025515) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -48,12 +48,12 @@ ActiveRecord::Schema.define(:version => 20120511174336) do
   add_index "comics", ["slug"], :name => "index_comics_on_slug", :unique => true
 
   create_table "frames", :force => true do |t|
-    t.string   "alt_text"
+    t.text     "alt_text",           :limit => 255
     t.string   "title_text"
     t.integer  "comic_id"
     t.integer  "order"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
