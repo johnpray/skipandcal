@@ -7,5 +7,7 @@ class Category < ActiveRecord::Base
   has_many :categorizations
   has_many :comics, through: :categorizations
 
+  has_paper_trail
+
   default_scope order: 'name ASC'
 end

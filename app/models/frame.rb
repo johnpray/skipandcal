@@ -3,6 +3,8 @@ class Frame < ActiveRecord::Base
 
   belongs_to :comic
 
+  has_paper_trail
+
   has_attached_file :image,
 									styles: {
 										large: '1000x1000>',

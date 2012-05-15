@@ -5,9 +5,10 @@ class Comic < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history]
 
   has_many :frames,	dependent: :destroy
-
   has_many :categorizations
   has_many :categories, through: :categorizations
+
+  has_paper_trail
 
   default_scope order: 'published_at DESC'
   self.per_page = 4

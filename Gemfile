@@ -9,6 +9,7 @@ gem 'paperclip', '~> 3.0.2' # uploads
 gem 'aws-sdk', '~> 1.3.4' # storage
 gem 'thin', '~> 1.3.1' # faster server
 gem 'friendly_id', '~> 4.0.1' # friendly urls
+gem 'paper_trail', '~> 2.6.3' # track changes and allow undo
 
 group :development, :test do
 	# gem 'eventmachine', '1.0.0.beta.4.1' # for thin locally on Windows; commented out for Heroku
