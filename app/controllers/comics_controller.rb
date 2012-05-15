@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
 
-  before_filter :admin,  except: [:index, :show]
+  before_filter :admin,  except: [:index, :show, :feed]
 
   def index
     if params[:category] && params[:order] = 'old-first'
