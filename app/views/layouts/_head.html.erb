@@ -9,4 +9,9 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<%= auto_discovery_link_tag :atom, '/feed' %>
 	<%= auto_discovery_link_tag :rss, '/feed.rss' %>
+	<% if @comic %>
+	<meta property="og:title" content="<%= full_title(yield(:title)) %>" />
+	<meta property="og:description" content="<%= @comic.summary %>" />
+	<meta property="og:image" content="<%= @comic.frames.first ? @comic.frames.first.image.url(:small) : '' %>" />
+	<% end %>
 </head>
