@@ -15,9 +15,13 @@ module ComicsHelper
 
 	def feed_content(comic)
     content = ''
-    comic.frames.each do |f|
-      content += "<p><img src='#{f.image.url(:large)}' alt='#{f.alt_text}' title='#{f.title_text}' /></p>"
-    end
+    if comic.frames.count > 1
+	    comic.frames.each do |f|
+	      content += "<p><img style='max-width: 100%' src='#{f.image.url(:medium)}' alt='#{f.alt_text}' title='#{f.title_text}' /></p>"
+	    end
+	  elsif comic.frames.count > 0
+	  	content += "<p><img style='max-width: 100%' src='#{comic.frames.first.image.url(:large)}' alt='#{comic.frames.first.alt_text}' title='#{comic.frames.first.title_text}' /></p>"
+	  end
     content += "<div>#{markdown comic.description}</div>"
   end
 end
