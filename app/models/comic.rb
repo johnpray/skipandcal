@@ -14,25 +14,43 @@ class Comic < ActiveRecord::Base
 
   validates :published_at,	presence: true
 
-  def self.random
-  	if (c = Comic.count) != 0
-      Comic.where(published: true).find(:first, :offset =>rand(c))
+  def self.random(category = nil)
+  	if category
+      category.comics.where(published: true).find(:first, :offset =>rand(category.comics.count))
+    else
+      Comic.where(published: true).find(:first, :offset =>rand(Comic.count))
+    end
+  end
+
+  def self.oldest(category = nil)
+    if category
+      category.comics.where(published: true).last
+    else
+      Comic.where(published: true).last
+    end
+  end
+
+  def self.newest(category = nil)
+    if category
+      category.comics.where(published: true).first
+    else
+      Comic.where(published: true).first
     end
   end
 
   def next(category = nil)
     if !category.nil?
-      category.comics.where("published_at > ?", published_at).last
+      category.comics.where(published: true).where("published_at > ?", published_at).last
     else
-      Comic.where("published_at > ?", published_at).last
+      Comic.where(published: true).where("published_at > ?", published_at).last
     end
   end
 
   def previous(category = nil)
     if !category.nil?
-      category.comics.where("published_at < ?", published_at).first
+      category.comics.where(published: true).where("published_at < ?", published_at).first
     else
-      Comic.where("published_at < ?", published_at).first
+      Comic.where(published: true).where("published_at < ?", published_at).first
     end
   end
 end

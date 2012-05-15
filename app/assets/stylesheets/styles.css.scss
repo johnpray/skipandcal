@@ -17,6 +17,13 @@ a {
 		text-decoration: underline;
 	}
 }
+hr {
+	border: solid darken($johnGreen, 10%);
+	border-width: 1px 0 0;
+	clear: both;
+	margin: 12px 0 18px;
+	height: 0;
+}
 .form-help {
 	font-style: italic;
 	color: gray;

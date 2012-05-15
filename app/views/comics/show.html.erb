@@ -1,17 +1,9 @@
 <%= provide(:title, @comic.title) %>
 
-<ul class="breadcrumbs">
-	<li><%= link_to "All comics", comics_path %></li>
-	<% if @category %>
-	<li><%= link_to @category.name, @category %></li>
-	<% end %>
-	<li class="current"><%= link_to @comic.title, @comic %></li>
-</ul>
+<%= render 'layouts/controls', comic: @comic, category: @category, top: true unless @news %>
+
 <ul class="comics">
 	<%= render 'comics/comic', comic: @comic %>
 </ul>
 
-<div class="row" id="next_previous_comic">
-	<%= link_to "« older comic", previous_path(@comic, @category), class: "medium white radius button", style: 'float: left; margin-bottom: 13px;' if @comic.previous(@category) %>
-	<%= link_to "newer comic »", next_path(@comic, @category), class: "large white radius button", style: 'float: right; margin-bottom: 13px;' if @comic.next(@category) %>
-</div>
+<%= render 'layouts/controls', comic: @comic, category: @category %>

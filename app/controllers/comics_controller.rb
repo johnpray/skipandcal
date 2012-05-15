@@ -3,36 +3,17 @@ class ComicsController < ApplicationController
   before_filter :admin,  except: [:index, :show]
 
   def index
-    if params[:category]
+    if params[:category] && params[:order] = 'old-first'
       @category = Category.find(params[:category])
-      if params[:order] == "old-first"
-        if admin?
-          @comics = @category.comics.reorder('published_at ASC').page(params[:page])
-        else
-          @comics = @category.comics.where(published: true).reorder('published_at ASC').page(params[:page])
-        end
-      else
-        if admin?
-          @comics = @category.comics.page(params[:page])
-        else
-          @comics = @category.comics.where(published: true).page(params[:page])
-        end
-      end
+      @comic = @category.comics.reorder('published_at ASC').first
+    elsif params[:category]
+      @category = Category.find(params[:category])
+      @comic = @category.comics.first
     else
-      if params[:order] == "old-first"
-        if admin?
-          @comics = Comic.reorder('published_at ASC').page(params[:page])
-        else
-          @comics = Comic.where(published: true).reorder('published_at ASC').page(params[:page])
-        end
-      else
-        if admin?
-          @comics = Comic.page(params[:page])
-        else
-          @comics = Comic.where(published: true).page(params[:page])
-        end
-      end
+      @comic = Comic.newest
+      @news = true
     end
+    render 'show'
   end
 
   def show
@@ -44,9 +25,7 @@ class ComicsController < ApplicationController
       redirect_to comics_path
     end
 
-    if request.path != comic_path(@comic)
-      redirect_to @comic, status: :moved_permanently
-    end
+    
   end
 
   def new

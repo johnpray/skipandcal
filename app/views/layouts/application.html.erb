@@ -14,25 +14,16 @@
           <p class="tagline">cartoons and comics by John Pray</p>
         </div>
         <div class="two phone-one columns">
-          <%= link_to 'skip to nav', '#nav', class: 'skip-to-nav small radius green button' %>
-
-          <% if controller.controller_name == 'comics' && controller.action_name == 'index' %>
-            <% if params[:order] == 'old-first' %>
-              <%= link_to 'see newest', url_for(category: params[:category]), class: 'change-order small radius green button' %>
-            <% else %>
-              <%= link_to 'see oldest', url_for(order: 'old-first', category: params[:category]), class: 'change-order small radius green button' %>
-            <% end %>
-          <% end %>
-
+          <%= link_to 'go to nav', '#controls', class: 'skip-to-nav small radius green button' %>
         </div>
       </div></header>
 
       <div class="row" id="content">
       	<div class="twelve columns">
+          <%= render 'layouts/news' if @news %>
         	<%= yield %>
         </div>
       </div>
-
 
       <%= render 'layouts/nav' %>
 
