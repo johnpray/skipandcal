@@ -25,7 +25,9 @@ class ComicsController < ApplicationController
       redirect_to comics_path
     end
 
-    
+    if request.path != comic_path(@comic) && request.path != comics_path
+      redirect_to @comic, status: :moved_permanently
+    end
   end
 
   def new
