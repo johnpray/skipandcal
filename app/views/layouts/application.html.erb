@@ -15,6 +15,7 @@
         </div>
         <div class="two phone-one columns">
           <%= link_to 'go to nav', '#controls', class: 'skip-to-nav small radius green button' %>
+          <%= link_to('new comic', new_comic_path, class: "skip-to-nav small white radius button")if admin? %>
         </div>
       </div></header>
 
