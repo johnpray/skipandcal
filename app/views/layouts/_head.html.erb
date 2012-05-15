@@ -7,5 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<%= auto_discovery_link_tag :atom, feed_path %>
+	<%= auto_discovery_link_tag :atom, '/feed' %>
+	<%= auto_discovery_link_tag :rss, '/feed.rss' %>
 </head>

@@ -65,10 +65,13 @@ class ComicsController < ApplicationController
   end
 
   def feed
+    @title = "Skip & Cal ~ cartoons and comics by John Pray"
     @comics = Comic.where(published: true).order('published_at DESC')
+    @updated = @comics.reorder('updated_at DESC').first.updated_at unless @comics.empty?
 
     respond_to do |format|
       format.atom
+      format.rss { redirect_to feed_path(format: :atom), status: :moved_permanently }
     end
   end
 

@@ -1,10 +1,10 @@
 Skipandcal::Application.routes.draw do
 
-  match '/feed' => 'comics#feed', :as => :feed, :defaults => { :format => 'atom' }
-
   resources :comics do
     resources :frames, shallow: true
   end
+  match '/feed' => 'comics#feed', as: :feed, defaults: { format: 'atom' }
+
   resources :categories, path: :categories
   resources :sessions, only: [:new, :create, :destroy]
 
