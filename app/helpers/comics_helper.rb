@@ -12,4 +12,12 @@ module ComicsHelper
 	def previous_path(comic = @comic, category = nil)
 		comic_path(comic.previous(category), category: category ? category.slug : nil)
 	end
+
+	def feed_content(comic)
+    content = ''
+    comic.frames.each do |f|
+      content += "<p><img src='#{f.image.url(:large)}' alt='#{f.alt_text}' title='#{f.title_text}' /></p>"
+    end
+    content += "<div>#{markdown comic.description}</div>"
+  end
 end

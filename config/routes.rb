@@ -1,5 +1,7 @@
 Skipandcal::Application.routes.draw do
 
+  match '/feed' => 'comics#feed', :as => :feed, :defaults => { :format => 'atom' }
+
   resources :comics do
     resources :frames, shallow: true
   end
@@ -10,7 +12,6 @@ Skipandcal::Application.routes.draw do
 
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

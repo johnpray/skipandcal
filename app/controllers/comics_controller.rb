@@ -64,4 +64,12 @@ class ComicsController < ApplicationController
     redirect_to comics_path
   end
 
+  def feed
+    @comics = Comic.where(published: true).order('published_at DESC')
+
+    respond_to do |format|
+      format.atom
+    end
+  end
+
 end
