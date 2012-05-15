@@ -3,6 +3,9 @@ class ComicsController < ApplicationController
   before_filter :admin,  except: [:index, :show, :feed]
 
   def index
+    if request.path != root_path
+      redirect_to root_path and return
+    end
     if params[:category] && params[:order] = 'old-first'
       @category = Category.find(params[:category])
       @comic = @category.comics.reorder('published_at ASC').first

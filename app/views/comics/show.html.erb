@@ -1,4 +1,4 @@
-<%= provide(:title, @comic.title.html_safe) %>
+<%= provide(:title, @comic.title.html_safe) unless @news %>
 
 <%= render 'layouts/controls', comic: @comic, category: @category, top: true unless @news %>
 
