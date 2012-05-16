@@ -3,7 +3,7 @@ class ComicsController < ApplicationController
   before_filter :admin,  except: [:index, :show, :feed]
 
   def index
-    if request.path != root_path
+    if !params[:category] && request.path != root_path
       redirect_to root_path and return
     end
     if params[:category] && params[:order] = 'old-first'
