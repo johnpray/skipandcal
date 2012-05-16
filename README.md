@@ -10,4 +10,4 @@ Feel free to make use of the code as you see fit.
 TODO
 ----
 
-- Add RSS/Atom feed
+- Add custom 404 and 500 error pages
