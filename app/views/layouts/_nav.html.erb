@@ -16,15 +16,26 @@
 
   <script>
     $(".category_button").click(function () {
-          $("#categories").animate( { opacity: 0.2 }, 1000,
+          $("#other_things, #random_comic").animate( { opacity: 0.2 }, 700,
             function() {
-              $("#categories").animate( { opacity: 1.0 }, 1000);
+              $("#other_things, #random_comic").animate( { opacity: 0.2 }, 3000, 
+                function() {
+                   $("#other_things, #random_comic").animate( { opacity: 1.0 }, 1000);
+                }
+              );
+            }
+          )
+    });
+    $(".skip-to-nav").click(function () {
+          $("#other_things, #random_comic, #categories, #controls").animate( { opacity: 0.5 }, 500,
+            function() {
+              $("#other_things, #random_comic, #categories, #controls").animate( { opacity: 1.0 }, 500);
             }
           )
     });
   </script>
 
-  <div class="four columns">
+  <div class="four columns" id="other_things">
     <h2>Other Things</h2>
     <ul class="unstyled">
       <li><%= link_to "Skip and Cal on Twitter", 'http://twitter.com/SkipandCal' %></li>
@@ -42,7 +53,7 @@
 
   </div>
 
-  <div class="four columns">
+  <div class="four columns" id="random_comic">
     <h2>Random Comic</h2>
     <% random_comic = Comic.random %>
     <%= link_to image_tag(random_comic.frames.first.image.url(:medium), style: 'width: 100%'), random_comic, title: "#{random_comic.summary} (Click to read)" unless random_comic.nil? || random_comic.frames.count < 1 %>

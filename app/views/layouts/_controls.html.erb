@@ -8,7 +8,7 @@
 		<%= link_to "« oldest", comic_path(Comic.oldest(category), category: category ? category.slug : nil), class: "green medium radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" unless Comic.oldest(category) == comic %>
 	</div>
 	<div class="two columns">
-		<a href="#nav" class="<%= @category ? 'white' : 'green' %> medium radius button category_button" style="width: 100%; padding-left: 0; padding-right: 0;" title="Change category"><%= category ? category.name : "Everything" %></a>
+		<a href="#categories" class="<%= @category ? 'white' : 'green' %> medium radius button category_button" style="width: 100%; padding-left: 0; padding-right: 0;" title="Change category"><%= category ? category.name : "Everything" %></a>
 	</div>
 	<div class="two columns">
 		<%= link_to "newest »", comic_path(Comic.newest(category), category: category ? category.slug : nil), class: "green medium radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" unless Comic.newest(category) == comic %>
