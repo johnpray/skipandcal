@@ -1,19 +1,19 @@
 <% top = top || false %>
 
-<div class="row <%= top ? 'show-on-desktops' : '' %>" id="controls" style="margin-bottom: 13px">
-	<div class="two columns">
-		<%= link_to "« oldest", comic_path(Comic.oldest(category), category: category ? category.slug : nil), class: "green medium radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" unless Comic.oldest(category) == comic %>
-	</div>
+<div class="row <%= top ? 'show-on-desktops' : '' %>" id="<%= top ? 'top-controls' : 'controls' %>" style="margin-bottom: 13px">
 	<div class="three columns">
 		<%= link_to "« older", previous_path(comic, category), class: "large #{top ? 'green' : 'white' } radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" if comic.previous(category) %>
 	</div>
 	<div class="two columns">
-		<span class="green medium radius button" style="width: 100%; padding-left: 0; padding-right: 0; cursor: default;" title="See Categories below to change this."><%= category ? category.name : "Everything" %></span>
+		<%= link_to "« oldest", comic_path(Comic.oldest(category), category: category ? category.slug : nil), class: "green medium radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" unless Comic.oldest(category) == comic %>
 	</div>
-	<div class="three columns">
-		<%= link_to "newer »", next_path(comic, category), class: "large #{ top ? 'green' : 'white' } radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" if comic.next(category) %>
+	<div class="two columns">
+		<a href="#nav" class="<%= @category ? 'white' : 'green' %> medium radius button category_button" style="width: 100%; padding-left: 0; padding-right: 0;" title="Change category"><%= category ? category.name : "Everything" %></a>
 	</div>
 	<div class="two columns">
 		<%= link_to "newest »", comic_path(Comic.newest(category), category: category ? category.slug : nil), class: "green medium radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" unless Comic.newest(category) == comic %>
+	</div>
+	<div class="three columns">
+		<%= link_to "newer »", next_path(comic, category), class: "large #{ top ? 'green' : 'white' } radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" if comic.next(category) %>
 	</div>
 </div>

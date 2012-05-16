@@ -143,6 +143,7 @@ ul.breadcrumbs li::before {
 	color: darken($johnGreen, 15%);
 	margin-top: 13px;
 	margin-bottom: 13px;
+	text-shadow: 0 0 10px $johnGreen;
 	h2 {
 		color: darken($johnGreen, 15%);
 		text-transform: uppercase;
@@ -155,6 +156,14 @@ ul.breadcrumbs li::before {
 			color: darken($johnGreen, 15%);
 		}
 	}
+}
+
+/* highlight animation styles */
+.highlighted {
+	background-color: darken($johnGreen, 10%);
+}
+.not-highlighted {
+	background-color: $johnGreen;
 }
 
 /* foundation tweaks */

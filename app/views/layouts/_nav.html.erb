@@ -4,7 +4,7 @@
 <a id="controls"></a>
 <nav><div class="row" id="nav">
 
-  <div class="four columns">
+  <div class="four columns" id="categories">
     <h2>Categories</h2>
     <ul class="unstyled">
       <li><%= link_to "Everything", comics_path %></li>
@@ -13,6 +13,16 @@
       <% end %>
     </ul>
   </div>
+
+  <script>
+    $(".category_button").click(function () {
+          $("#categories").animate( { opacity: 0.2 }, 500,
+            function() {
+              $("#categories").animate( { opacity: 1.0 }, 500);
+            }
+          )
+    });
+  </script>
 
   <div class="four columns">
     <h2>Other Things</h2>
