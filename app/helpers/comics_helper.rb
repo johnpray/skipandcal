@@ -23,5 +23,9 @@ module ComicsHelper
 	  	content += "<p><img style='max-width: 100%' src='#{comic.frames.first.image.url(:large)}' alt='#{comic.frames.first.alt_text}' title='#{comic.frames.first.title_text}' /></p>"
 	  end
     content += "<div>#{markdown comic.description}</div>"
+    if comic.categories.include?(Category.find('cardinal-courier'))
+			content += '<p><i>This cartoon or comic originally appeared in the </i><a href="http://www.cardinalcourieronline.com">Cardinal Courier</a><i>, the award-winning student-run newspaper at <a href="http://www.sjfc.edu">St. John Fisher College</a>.</i></p>'
+		end
+		content
   end
 end
