@@ -20,7 +20,7 @@
 					<%= link_to 'permalink', comic_path(comic, category: @category ? @category.slug : nil) %>
 				</p>
 				<p class="title-and-date">
-					<strong class="title"><%= link_to comic.title, comic_path(comic, category: @category ? @category.slug : nil) %></strong>
+					<strong class="title"><%= link_to comic.title, comic_path(comic, category: @category ? @category.slug : nil) %></strong><br class="show-on-phones" />
 					<span class="date"> &mdash; <%= comic.published_at.to_date.to_formatted_s(:long) || comic.created_at.to_date.to_formatted_s(:long) %></span>
 					<% if admin? && !comic.published? %><span style="color: red;">(NOT PUBLISHED)</span><% end %>
 				</p>
