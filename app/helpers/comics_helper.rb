@@ -24,7 +24,7 @@ module ComicsHelper
 	  end
     content += "<div>#{markdown comic.description}</div>"
     if comic.categories.include?(Category.find('cardinal-courier'))
-			content += '<p><i>This cartoon or comic originally appeared in the </i><a href="http://www.cardinalcourieronline.com">Cardinal Courier</a><i>, the award-winning student-run newspaper at <a href="http://www.sjfc.edu">St. John Fisher College</a>.</i></p>'
+			content += '<p><i>This work originally appeared in the </i><a href="http://www.cardinalcourieronline.com">Cardinal Courier</a><i>, the award-winning student-run newspaper at <a href="http://www.sjfc.edu">St. John Fisher College</a>, between 2007 and 2011.</i></p>'
 		end
 		content
   end
