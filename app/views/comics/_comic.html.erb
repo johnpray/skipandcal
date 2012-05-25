@@ -21,7 +21,7 @@
 				</p>
 				<p class="title-and-date">
 					<strong class="title"><%= link_to comic.title, comic_path(comic, category: @category ? @category.slug : nil) %></strong><br class="show-on-phones" />
-					<span class="date"> &mdash; originally published <%= comic.published_at.to_date.to_formatted_s(:long) || comic.created_at.to_date.to_formatted_s(:long) %></span>
+					<span class="date"> <%= display_dates(comic) %></span>
 					<% if admin? && !comic.published? %><span style="color: red;">(NOT PUBLISHED)</span><% end %>
 				</p>
 				<div class="description">

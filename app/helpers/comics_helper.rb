@@ -22,10 +22,19 @@ module ComicsHelper
 	  elsif comic.frames.count > 0
 	  	content += "<p><img style='max-width: 100%' src='#{comic.frames.first.image.url(:large)}' alt='#{comic.frames.first.alt_text}' title='#{comic.frames.first.title_text}' /></p>"
 	  end
+	  content += "<p><i>#{display_dates(comic)}</i></p>"
     content += "<div>#{markdown comic.description}</div>"
     if comic.categories.include?(Category.find('cardinal-courier'))
 			content += '<p><i>This work originally appeared in the </i><a href="http://www.cardinalcourieronline.com">Cardinal Courier</a><i>, the award-winning student-run newspaper at <a href="http://www.sjfc.edu">St. John Fisher College</a>, between 2007 and 2011.</i></p>'
 		end
 		content
+  end
+
+  def display_dates(comic)
+  	if comic.published_at.to_date != comic.created_at.to_date
+  		"posted #{comic.created_at.to_date.to_formatted_s(:long)}; originally published #{comic.published_at.to_date.to_formatted_s(:long)}"
+  	else
+  		"posted #{comic.created_at.to_date.to_formatted_s(:long)}"
+  	end
   end
 end
