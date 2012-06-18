@@ -32,9 +32,9 @@ module ComicsHelper
 
   def display_dates(comic)
   	if comic.published_at.to_date != comic.created_at.to_date
-  		"posted #{comic.created_at.to_date.to_formatted_s(:long)}; originally published #{comic.published_at.to_date.to_formatted_s(:long)}"
+  		"#{comic.published_at.to_date.to_formatted_s(:long)} (published) / #{comic.created_at.to_date.to_formatted_s(:long)} (posted here)"
   	else
-  		"posted #{comic.created_at.to_date.to_formatted_s(:long)}"
+  		"#{comic.created_at.to_date.to_formatted_s(:long)}"
   	end
   end
 end
