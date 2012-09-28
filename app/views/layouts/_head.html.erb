@@ -1,4 +1,3 @@
-<head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
@@ -14,4 +13,3 @@
 	<meta property="og:description" content="<%= @comic.summary %>" />
 	<meta property="og:image" content="<%= @comic.frames.first ? @comic.frames.first.image.url(:small) : '' %>" />
 	<% end %>
-</head>
