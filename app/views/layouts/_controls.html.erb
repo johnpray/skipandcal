@@ -1,6 +1,6 @@
 <% top = top || false %>
 
-<div class="row <%= top ? 'show-on-desktops' : '' %>" id="<%= top ? 'top-controls' : 'controls' %>" style="margin-bottom: 13px">
+<div class="row <%= top ? 'show-on-desktops' : '' %>" id="<%= top ? 'top-controls' : 'bottom-controls' %>" style="margin-bottom: 13px">
 
 	<div class="two columns">
 		<%= link_to "⇐ first", comic_path(Comic.oldest(category), category: category ? category.slug : nil), class: "green medium radius button", style: "width: 100%; padding-left: 0; padding-right: 0;" unless Comic.oldest(category) == comic %>
