@@ -12,7 +12,9 @@ Changelog
 
 2012-10-17
 
-- Finally added listings pages for Everything and individual categories
+- Finally added listings pages for Everything and individual categories.
+- Added an About page (and removed the ugly "news" flash on the homepage).
+- Improved footer nav.
 
 2012-05 / 2012-06
 
@@ -23,3 +25,4 @@ TODO
 
 - Add search
 - Add custom 404 and 500 error pages
+- Change the favicon to something better

@@ -11,8 +11,8 @@ class ComicsController < ApplicationController
     unless params[:id].nil?
       @comic = Comic.find(params[:id])
     else
+      @root = true
       @comic = Comic.newest
-      @news = true unless params[:category]
     end
     @category = Category.find(params[:category]) if params[:category]
 
@@ -21,7 +21,7 @@ class ComicsController < ApplicationController
       redirect_to comics_path
     end
 
-    if request.path != comic_path(@comic) && request.path != comics_path
+    if request.path != comic_path(@comic) && request.path != root_path
       redirect_to @comic, status: :moved_permanently
     end
   end

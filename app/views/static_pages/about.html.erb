@@ -1,72 +1,54 @@
-<!--
-<ul class="breadcrumbs">
-	<li><a href="#">Categories</a></li>
-	<li><a href="#">Skip &amp; Cal</a></li>
-	<li class="current"><a href="#">newest first</a></li>
-</ul>
--->
-<ul class="comics">
-	<li class="comic-wrapper">
+<%= provide(:title, "About") %>
+
+<div class="comics">
+	<div class="comic-wrapper">
 		<div class="comic row">
-			<div class="info twelve columns">
-				<a href="#" class="permalink">permalink</a>
-				<p class="date">15 January 2008</p>
-			</div>
 			<div class="twelve columns">
-				<ul class="frames block-grid mobile <%= true ? 'two-up' : 'one-up' %>">
+				<ul class="frames block-grid mobile one-up">
 					<li class="frame">
-						<%= image_tag 'sample_comic_frames/1.png' %>
-					</li>
-					<li class="frame">
-						<%= image_tag 'sample_comic_frames/2.png' %>
-					</li>
-					<li class="frame">
-						<%= image_tag 'sample_comic_frames/3.png' %>
-					</li>
-					<li class="frame">
-						<%= image_tag 'sample_comic_frames/4.png' %>
+						<%= image_tag 'http://s3.amazonaws.com/skipandcal.net/static_images/skipandcal.png', alt: "Skip the Squirrel and Cal the Cardinal look down from their branches. Skip prepares to drop an acorn on unsuspecting passerby.", title: "Skip the Squirrel and Cal the Cardinal look down from their branches. Skip prepares to drop an acorn on unsuspecting passerby." %>
 					</li>
 				</ul>
-				<p class="title"><strong>Skip and Cal Classics, #1: "Warming"</strong></p>
-				<div class="description">
-					<p>This is the "pilot" of Skip &amp; Cal, so to speak. It was drawn over winter break of 2007-2008 after the senior staff at the Cardinal Courier offered to let me do a comic strip with subject matter of my own choosing in addition to the editorial cartoon I’d started doing that semester. It’s also the only strip ever to be done in color.
+				<div class="about-info">
+					<p class="title-and-date">
+						<strong class="title">About Skip &amp; Cal</strong><br class="show-on-phones" />
+						<span class="date"> and other cartoons and comics by John Pray</span>
+					</p>
+					<div class="description">
 
-					<p>I don’t remember if this strip actually ended up in an issue of the Courier or not, but it does mark the official naming of my squirrel and cardinal characters as "Skip Squirrel" and "Cal Cardinal" (which were coined by my dad, actually). (Note, however, that this wasn’t actually the first appearance of the characters themselves. They’d been appearing in the editorial cartoons in some form or another since I started drawing them. In fact, their personalities pretty much solidified in their first strip together, which you can see here.)
+						<p>Hello, and welcome to my cartoon and comics repository! This modest site purports to contain and display many of the various cartoons, comics, and illustrations that I, <%= link_to 'John Pray', 'http://www.johnpray.com' %>, have created during my few years. Besides an occasional cartoonist, I also call myself a web developer, IT whiz, and various other things that may or not be fit to publish.</p>
 
-					<p>This strip also marks (as of this writing) the only appearance of Cal's cousin Pert Penguin. He seems to be enjoying global climate change more than your average arctic creature.
+						<p>Many, but not all, of the cartoons on this site were drawn for and originally published by the <%= link_to 'Cardinal Courier', 'http://www.cardinalcourieronline.com/' %> at Rochester, NY's <%= link_to 'St. John Fisher College', 'http://www.sjfc.edu' %>, where I spent my four undergraduate years. A further subset of that are the site's namesake: comic strips starring <%= link_to 'Skip the Squirrel and Cal Cardinal', 'http://www.skipandcal.net/comics/so-much-more-fun?category=skip-cal' %> (whom you've already met above &ndash; I hope the acorn missed you this time). I'm almost finished uploading my entire Cardinal Courier archive, after which point I'll theoretically start drawing new comics (...we'll see).</p>
 
-					<p><i>Details Pro Tip:</i> Pay attention to Skip’s acorn from the first frame to the third. That squirrel does it even when he doesn’t mean to!
+						<p>Feel free to read the comics <%= link_to "from the beginning", comic_path(Comic.oldest) %> (though there's rarely any continuity), browse the <%= link_to 'archives', comics_path %> for something that might interest you, or scroll to the bottom of any page for a random comic. Topic matter varies wildly, though I estimate at least half of the comics involve lame acorn jokes.</p>
 
+						<p>If you want to get updates for new uploads, our favorite animal friends Skip and Cal are now <a style="color: #357A24;" href="http://twitter.com/SkipandCal">on Twitter</a>, <a style="color: #357A24;" href="http://facebook.com/skipandcal">on Facebook</a>, and <a href="https://plus.google.com/110476821764875375411">on Google+</a>. They'll tell you about anything new I put up, and I hear they're pretty snarky to boot. Or you can <%= link_to 'subscribe for email updates', 'http://feedburner.google.com/fb/a/mailverify?uri=skipandcal&amp;loc=en_US', style:"color: #357A24;" %>. (There's an <%= link_to 'RSS feed', 'http://feeds.feedburner.com/skipandcal', style:"color: #357A24;" %> too, if you're into that kind of thing.)</p>
+
+						<p style="float: left;">
+							<!-- Twitter follow button -->
+							<a href="https://twitter.com/SkipandCal" class="twitter-follow-button" data-show-count="true">Follow @SkipandCal</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</p>
+
+						<p style="float: left;">
+							<!-- Google+ +1 button -->
+							<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+							<g:plusone href="http://www.skipandcal.net/" size="medium"></g:plusone>
+						</p>
+
+						<p>
+							<!-- Facebook like button -->
+							<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fskipandcal&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=25" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:25px;" allowTransparency="true"></iframe>
+						</p>
+
+						<p>For those who care about such things, this <%= link_to 'responsive', 'http://www.alistapart.com/articles/responsive-web-design/' %> site was/is coded by me on the popular-for-a-reason web development framework <%= link_to 'Ruby on Rails', 'http://rubyonrails.org' %> and web design framework <%= link_to 'ZURB Foundation 2', 'http://foundation.zurb.com' %> (only because I've been too lazy to port it to the superior Foundation 3). It's hosted mostly for free on <%= link_to 'Heroku', 'http://www.heroku.com' %> while images reside on <%= link_to 'Amazon AWS S3', 'http://aws.amazon.com/s3/' %>. Finally, the source code is available <%= link_to 'on GitHub', 'https://github.com/LouieGeetoo/skipandcal' %> for your perusing pleasure.</p>
+
+						<p>Thanks for visiting, and enjoy!</p>
+
+						<p style="font-style: italic; font-size: 18px;">&mdash; John</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</li>
-
-		<li class="comic-wrapper">
-		<div class="comic row">
-			<div class="info twelve columns">
-				<a href="#" class="permalink">permalink</a>
-				<p class="date">15 January 2008</p>
-			</div>
-			<div class="twelve columns">
-				<ul class="frames block-grid mobile <%= false ? 'two-up' : 'one-up' %>">
-					<li class="frame">
-						<%= image_tag 'http://dl.dropbox.com/u/6648787/Storage/Cartoons/20080917lackmann.png' %>
-					</li>
-				</ul>
-				<p class="title"><strong>Skip and Cal Classics, #1: "Warming"</strong></p>
-				<div class="description">
-					<p>This is the "pilot" of Skip &amp; Cal, so to speak. It was drawn over winter break of 2007-2008 after the senior staff at the Cardinal Courier offered to let me do a comic strip with subject matter of my own choosing in addition to the editorial cartoon I’d started doing that semester. It’s also the only strip ever to be done in color.
-
-					<p>I don’t remember if this strip actually ended up in an issue of the Courier or not, but it does mark the official naming of my squirrel and cardinal characters as "Skip Squirrel" and "Cal Cardinal" (which were coined by my dad, actually). (Note, however, that this wasn’t actually the first appearance of the characters themselves. They’d been appearing in the editorial cartoons in some form or another since I started drawing them. In fact, their personalities pretty much solidified in their first strip together, which you can see here.)
-
-					<p>This strip also marks (as of this writing) the only appearance of Cal's cousin Pert Penguin. He seems to be enjoying global climate change more than your average arctic creature.
-
-					<p><i>Details Pro Tip:</i> Pay attention to Skip’s acorn from the first frame to the third. That squirrel does it even when he doesn’t mean to!
-
-				</div>
-			</div>
-		</div>
-	</li>
-
-</ul>
+	</div>
+</div>

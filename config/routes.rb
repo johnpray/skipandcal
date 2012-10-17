@@ -1,17 +1,21 @@
 Skipandcal::Application.routes.draw do
 
+  root to: 'comics#show'
+
   resources :comics do
     resources :frames, shallow: true
   end
+
+  match '/about', to: 'static_pages#about'
+
   match '/feed' => 'comics#feed', as: :feed, defaults: { format: 'atom' }
 
   resources :categories, path: :categories
   resources :sessions, only: [:new, :create, :destroy]
 
-  root to: 'comics#show'
-
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
