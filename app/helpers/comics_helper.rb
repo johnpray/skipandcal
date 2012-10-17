@@ -37,4 +37,14 @@ module ComicsHelper
   		"#{comic.created_at.to_date.to_formatted_s(:long)}"
   	end
   end
+
+  def display_short_dates(comic)
+  	Date::DATE_FORMATS[:short_with_year] = "%e %b %Y"
+
+  	if comic.published_at.to_date != comic.created_at.to_date
+  		"#{comic.published_at.to_date.to_formatted_s(:short_with_year)}"
+  	else
+  		"#{comic.created_at.to_date.to_formatted_s(:short_with_year)}"
+  	end
+  end
 end

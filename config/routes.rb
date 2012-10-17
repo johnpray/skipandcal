@@ -8,7 +8,7 @@ Skipandcal::Application.routes.draw do
   resources :categories, path: :categories
   resources :sessions, only: [:new, :create, :destroy]
 
-  root to: 'comics#index'
+  root to: 'comics#show'
 
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete

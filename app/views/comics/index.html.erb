@@ -1,30 +1,12 @@
 <%= provide(:title, @category.name) if @category %>
 
-<% if @category %>
-	<ul class="breadcrumbs">
-		<li><%= link_to "All comics", comics_path %></li>
-		<li class="current"><%= link_to @category.name, @category %></li>
-	</ul>
-<% end %>
-<% if params[:page] && params[:page] != '1' %>
-	<div class="row">
-		<%= will_paginate @comics,
-			previous_label: content_tag(:span, "« back", class: "medium green radius button", style: 'float: left; margin-bottom: 13px;'),
-			next_label: content_tag(:span, "keep going »", class: "medium green radius button", style: 'float: right; margin-bottom: 13px;'),
-			page_links: false
-		%>
-	</div>
-<% end %>
-<ul class="comics">
+<h2><%= @category ? @category.name : "Everything" %></h2>
+<ul class="comics block-grid two-up mobile">
 	<% @comics.each do |comic| %>
-		<%= render('comics/comic', comic: comic) unless !comic.published? && !admin? %>
+		<%= render('comics/comic_summary', comic: comic) unless !comic.published? && !admin? %>
 	<% end %>
 </ul>
-<%= will_paginate @comics,
-	previous_label: content_tag(:span, "« back", class: "medium green radius button", style: 'float: left; margin-bottom: 13px;'),
-	next_label: content_tag(:span, "there's more! »", class: "large white radius button", style: 'float: right; margin-bottom: 13px;'),
-	page_links: false
-%>
+
 <div class="clearfix"></div>
 
 <%= link_to('Add a new comic', new_comic_path, class: "large white radius button") if admin? %>
