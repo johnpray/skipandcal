@@ -10,6 +10,9 @@
 				<% if admin? && !comic.published? %><span style="color: red;">(NOT PUBLISHED)</span><% end %>
 			</p>
 			<p><%= comic.summary %></p>
+			<div class="categories">
+					<i><b>Categories:</b> <%= category_links_list(comic) %></i>
+				</div>
 		</div>
 	</div>
 </li>
