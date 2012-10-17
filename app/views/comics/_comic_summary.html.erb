@@ -3,16 +3,19 @@
 		<div class="three phone-one columns">
 			<%= (link_to (image_tag comic.frames.first.image.url(:thumb), alt: comic.frames.first.alt_text, title: comic.frames.first.title_text), comic_path(comic, category: @category ? @category.slug : nil), category: params[:category]) if comic.frames.count > 0 %>
 		</div>
-		<div class="eight phone-three columns end">
+		<div class="eight phone-two columns">
 			<p class="title-and-date">
 				<strong class="title"><%= link_to comic.title, comic_path(comic, category: @category ? @category.slug : nil) %></strong>
 				<span class="date"> <%= display_short_dates(comic) %></span>
 				<% if admin? && !comic.published? %><span style="color: red;">(NOT PUBLISHED)</span><% end %>
 			</p>
 			<p><%= comic.summary %></p>
-			<div class="categories">
-					<i><b>Categories:</b> <%= category_links_list(comic) %></i>
-				</div>
+			<p class="categories">
+				<i><b>Categories:</b> <%= category_links_list(comic) %></i>
+			</p>
+		</div>
+		<div class="one phone-one column">
+			&nbsp;
 		</div>
 	</div>
 </li>

@@ -7,6 +7,6 @@
 	<% end %>
 </ul>
 
-<div class="clearfix"></div>
-
-<%= link_to('Add a new comic', new_comic_path, class: "large white radius button") if admin? %>
+<script>
+$('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'left'});
+</script>
