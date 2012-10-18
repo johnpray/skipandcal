@@ -1,4 +1,4 @@
-<%= provide(:title, @category.name) if @category %>
+<%= provide(:title, @category.name.html_safe) if @category %>
 
 <h2><%= @category ? @category.name : "Everything" %></h2>
 <ul class="comics block-grid two-up mobile">
