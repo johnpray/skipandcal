@@ -5,6 +5,7 @@ gem 'jquery-rails', '~> 2.0.0'
 
 gem 'will_paginate', '~> 3.0.3' # pagination for index pages
 gem 'redcarpet', '~> 2.1.1' # markdown
+gem 'cocaine', '0.3.2' # paperclip dependency; later versions break things
 gem 'paperclip', '3.0.3' # uploads
 gem 'aws-sdk', '~> 1.3.4' # storage
 gem 'thin', '~> 1.3.1' # faster server
