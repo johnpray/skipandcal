@@ -12,7 +12,7 @@
     <meta property="og:title" content="<%= full_title(yield(:title)) %>" />
     <meta property="og:site_name" content="<%= full_title %>" />
     <meta property="og:description" content="<%= @comic.summary %>" />
-    <meta property="og:image" content="<%= @comic.frames.first ? @comic.frames.first.image.url(:small) : '' %>" />
+    <meta property="og:image" content="<%= @comic.frames.first ? @comic.frames.first.image.url(:small) : 'https://s3.amazonaws.com/skipandcal.net/static_images/caricature-johnpray-color-web.png' %>" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@skipandcal" />
     <meta name="twitter:creator" content="@LouieGeetoo" />
