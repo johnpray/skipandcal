@@ -1,15 +1,19 @@
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<%= auto_discovery_link_tag :atom, '/feed' %>
-	<%= auto_discovery_link_tag :rss, '/feed.rss' %>
-	<% if @comic %>
-	<meta property="og:title" content="<%= full_title(yield(:title)) %>" />
-	<meta property="og:description" content="<%= @comic.summary %>" />
-	<meta property="og:image" content="<%= @comic.frames.first ? @comic.frames.first.image.url(:small) : '' %>" />
-	<% end %>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <%= auto_discovery_link_tag :atom, '/feed' %>
+    <%= auto_discovery_link_tag :rss, '/feed.rss' %>
+    <% if @comic %>
+    <meta property="og:title" content="<%= full_title(yield(:title)) %>" />
+    <meta property="og:site_name" content="<%= full_title %>" />
+    <meta property="og:description" content="<%= @comic.summary %>" />
+    <meta property="og:image" content="<%= @comic.frames.first ? @comic.frames.first.image.url(:small) : '' %>" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@skipandcal" />
+    <meta name="twitter:creator" content="@LouieGeetoo" />
+    <% end %>
