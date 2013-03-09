@@ -11,6 +11,8 @@ gem 'aws-sdk', '~> 1.3.4' # storage
 gem 'thin', '~> 1.3.1' # faster server
 gem 'friendly_id', '~> 4.0.1' # friendly urls
 gem 'paper_trail', '~> 2.6.3' # track changes and allow undo
+gem 'turbolinks', '~> 1.0.0' # add turbolinks
+gem 'jquery-turbolinks', '~> 0.2.1' # but don't break jquery
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.4'
