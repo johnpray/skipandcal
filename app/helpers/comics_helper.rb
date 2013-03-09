@@ -5,12 +5,14 @@ module ComicsHelper
 		end
 	end
 
-	def next_path(comic = @comic, category = nil)
-		comic_path(comic.next(category), category: category ? category.slug : nil)
+	def next_path(comic = @comic, options = {})
+		opt = {category: nil}.merge(options)
+		comic_path(comic.next(opt[:category]), opt)
 	end
 
-	def previous_path(comic = @comic, category = nil)
-		comic_path(comic.previous(category), category: category ? category.slug : nil)
+	def previous_path(comic = @comic, options = {})
+		opt = {category: nil}.merge(options)
+		comic_path(comic.previous(opt[:category]), opt)
 	end
 
 	def feed_content(comic)
