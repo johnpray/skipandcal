@@ -10,11 +10,14 @@ Feel free to make use of the code as you see fit (except to hack the site).
 Changelog
 ---------
 
+2013-03-06
+- Add Turbolinks support
+
 2012-10-17
 
-- Finally added listings pages for Everything and individual categories.
-- Added an About page (and removed the ugly "news" flash on the homepage).
-- Improved footer nav.
+- Add listings/archive pages for Everything and individual categories
+- Added an About page (and removed the ugly "news" flash on the homepage)
+- Improved footer nav
 
 2012-05 / 2012-06
 
