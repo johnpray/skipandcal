@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="two columns">
-		<a href="#categories" class="<%= @category ? 'white' : 'green' %> medium radius button category_button" style="width: 100%; padding-left: 0; padding-right: 0;" title="Change category"><%= category ? category.name : "Everything" %></a>
+		<a href="#categories" class="<%= category ? 'white' : 'green' %> medium radius button category_button" style="width: 100%; padding-left: 0; padding-right: 0;" title="Change category"><%= category ? category.name : "Everything" %></a>
 	</div>
 
 	<div class="three columns">
@@ -23,3 +23,6 @@
 	</div>
 
 </div>
+<% unless top %>
+
+<% end %>
