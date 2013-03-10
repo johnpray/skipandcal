@@ -10,8 +10,9 @@ Feel free to make use of the code as you see fit (except to hack the site).
 Changelog
 ---------
 
-2013-03-06
+2013-03-09
 - Add Turbolinks support
+- Add auto-scroll to top of comic (except on homepage)
 
 2012-10-17
 
@@ -23,7 +24,7 @@ Changelog
 
 - Initial version of site goes live. Fully responsive with reflowing frames and the ability to sort by category
 
-TODO
+ToDo
 ----
 
 - Add search
