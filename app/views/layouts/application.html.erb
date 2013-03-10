@@ -4,7 +4,7 @@
 	  <%= render 'layouts/head' %>
 	  <%= render 'layouts/analytics' if Rails.env.production? && !admin? %>
 	</head>
-	<body>
+	<body class="<%= params[:controller] %> <%= params[:action] %> <%= (request.env['PATH_INFO'] == '/') ? 'home' : '' %>">
 		<div class="container" id="content-container">
       <%= render 'layouts/ie6_warning' %>
       <%= render 'layouts/flash', flash: flash %>
