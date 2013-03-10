@@ -10,6 +10,16 @@ module ApplicationHelper
     end
   end
 
+  # Returns a social linking (e.g. Open Graph) preview friendly title
+  def og_title(page_title = '')
+    base_title = "Skip & Cal ~ cartoons and comics by John Pray"
+    if page_title.empty?
+      base_title
+    else
+      page_title
+    end
+  end
+
   def markdown(text)
     if !text.nil?
     	markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
