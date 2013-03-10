@@ -1,8 +1,9 @@
+<nav id="main-nav">
+<%= render 'layouts/controls', comic: @comic, category: @category if params[:controller] == 'comics' && params[:action] == 'show' %>
 <div class="row">
   <hr class="twelve columns" />
 </div>
-<a id="controls"></a>
-<nav><div class="row" id="nav">
+<div class="row" id="nav">
 
   <div class="four columns" id="categories">
     <h2>Categories</h2>
@@ -13,27 +14,6 @@
       <% end %>
     </ul>
   </div>
-
-  <script>
-    $(".category_button").click(function () {
-          $("#other_things, #random_comic, #controls, hr").animate( { opacity: 0.2 }, 700,
-            function() {
-              $("#other_things, #random_comic, #controls, hr").animate( { opacity: 0.2 }, 3000, 
-                function() {
-                   $("#other_things, #random_comic, #controls, hr").animate( { opacity: 1.0 }, 1000);
-                }
-              );
-            }
-          )
-    });
-    $(".skip-to-nav").click(function () {
-          $("#other_things, #random_comic, #categories, #controls").animate( { opacity: 0.5 }, 500,
-            function() {
-              $("#other_things, #random_comic, #categories, #controls").animate( { opacity: 1.0 }, 500);
-            }
-          )
-    });
-  </script>
 
   <div class="four columns" id="other_things">
     <h2>Other Things</h2>
