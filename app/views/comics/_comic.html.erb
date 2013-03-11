@@ -27,7 +27,7 @@
 				<div class="description">
 					<%= markdown comic.description %>
 				</div>
-				<% if comic.categories.include?(Category.find('cardinal-courier')) %>
+				<% if Category.exists?('cardinal-courier') && comic.categories.include?(Category.find('cardinal-courier')) %>
 				<p><i>This work originally appeared in the </i><%= link_to "Cardinal Courier", 'http://www.cardinalcourieronline.com' %><i>, the award-winning student-run newspaper at <%= link_to 'St. John Fisher College', 'http://www.sjfc.edu' %>, between 2007 and 2011.</i></p>
 				<% end %>
 				<% if comic.categories.count > 0 %>

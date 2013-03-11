@@ -11,7 +11,7 @@ Skipandcal::Application.routes.draw do
   match '/feed' => 'comics#feed', as: :feed, defaults: { format: 'atom' }
 
   resources :categories, path: :categories
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:create]
 
   match '/login', to: 'sessions#new'
   match '/logout', to: 'sessions#destroy', via: :delete
