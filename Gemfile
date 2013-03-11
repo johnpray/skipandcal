@@ -27,6 +27,10 @@ group :development, :test do
   gem 'capybara'
 #  gem 'show_me_the_cookies'
   gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'wdm' # guard needs it on Windows
+  gem 'spork'
+  gem 'guard-spork'
 end
 
 group :production do
