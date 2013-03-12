@@ -148,6 +148,11 @@ ul.breadcrumbs li::before {
 	}
 }
 
+/* categories archives */
+ul.comics.block-grid {
+	overflow: visible;
+}
+
 /* bottom nav */
 #nav {
 	color: darken($johnGreen, 15%);
