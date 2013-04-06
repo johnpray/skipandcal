@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <%= auto_discovery_link_tag :atom, '/feed' %>
     <%= auto_discovery_link_tag :rss, '/feed.rss' %>
-    <% if @comic %>
+    <% if @comic && (params[:action] == 'show' || params[:action] == 'index') %>
     <meta property="og:title" content="<%= og_title(yield(:title)) %>" />
     <meta property="og:site_name" content="<%= full_title %>" />
     <meta property="og:description" content="<%= @comic.summary %>" />
