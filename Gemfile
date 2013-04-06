@@ -31,8 +31,9 @@ group :development, :test do
   gem 'wdm' # guard needs it on Windows
   gem 'spork'
   gem 'guard-spork'
+  gem 'execjs', '1.2.4' # https://github.com/sstephenson/execjs/issues/48
 end
 
 group :production do
-  gem 'pg', '~> 0.12.2'
+  gem 'pg'
 end
