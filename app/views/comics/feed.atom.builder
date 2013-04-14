@@ -10,7 +10,7 @@ atom_feed :language => 'en-US' do |feed|
       entry.content feed_content(comic), type: :html
 
       entry.author do |author|
-        author.name "John Pray"
+        author.name "John P. Pray"
       end
     end
   end
