@@ -11,8 +11,6 @@ gem 'aws-sdk', '~> 1.3.4' # storage on Amazon S3
 gem 'thin', '~> 1.3.1' # a faster server
 gem 'friendly_id', '~> 4.0.1' # friendly urls (names instead of numbers)
 gem 'paper_trail', '~> 2.6.3' # track changes and allow undo
-gem 'turbolinks', '~> 1.0.0' # add turbolinks
-gem 'jquery-turbolinks', '~> 0.2.1' # but don't break jquery
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.4'
@@ -28,7 +26,7 @@ group :development, :test do
 #  gem 'show_me_the_cookies'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
-  gem 'wdm' # guard needs it on Windows
+#  gem 'wdm' # guard needs it on Windows
   gem 'spork'
   gem 'guard-spork'
   gem 'execjs', '1.2.4' # https://github.com/sstephenson/execjs/issues/48
