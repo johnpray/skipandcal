@@ -11,7 +11,7 @@ Changelog
 ---------
 
 2013-03-09
-- Add Turbolinks support
+- <del>Add Turbolinks support</del>
 - Add auto-scroll to top of comic (except on homepage)
 
 2012-10-17
