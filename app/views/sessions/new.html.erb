@@ -4,6 +4,8 @@
 	<li class="comic-wrapper">
 		<div class="comic row">
 			<div class="ten columns">
+				<%= link_to "Log in with jpray-auth", '/auth/jpray_auth', class: 'large green button' %>
+				<hr />
 		    <%= form_for(:session, url: sessions_path, html: {class: 'nice', style: 'margin-bottom: 0;'}) do |f| %>
 
 		    	<%= f.label :username %>
@@ -12,7 +14,7 @@
 					<%= f.label :password %>
 					<%= f.password_field :password, class: 'expand input-text', required: 'required' %>
 
-		      <%= f.submit "Log in", :class => "large green button" %>
+		      <%= f.submit "Log in with password", :class => "large green button" %>
 		      
 		    <% end %>
 		  </div>

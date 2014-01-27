@@ -31,8 +31,8 @@
 
 #     it "is able to login with the correct credentials" #do
 #     # 	visit '/login'
-#     # 	fill_in 'session_username', with: ADMIN_USERNAME
-#     # 	fill_in 'session_password', with: ADMIN_PASSWORD
+#     # 	fill_in 'session_username', with: ENV['ADMIN_USERNAME']
+#     # 	fill_in 'session_password', with: ENV['ADMIN_PASSWORD']
 #     # 	click_button 'Log in'
 #     # 	page.should have_content('Welcome back, Master.')
 #     # 	admin?.should be_true
@@ -40,7 +40,7 @@
 
 #     it "is not able to log in with the wrong credentials"# do
 #     # 	visit '/login'
-#     # 	fill_in 'session_username', with: ADMIN_USERNAME
+#     # 	fill_in 'session_username', with: ENV['ADMIN_USERNAME']
 #     # 	fill_in 'session_password', with: "this is wrong"
 #     # 	click_button 'Log in'
 #     # 	page.should have_content('unauthorized')

@@ -14,6 +14,7 @@ gem 'aws-sdk', '~> 1.3.4' # storage on Amazon S3
 gem 'thin', '~> 1.3.1' # a faster server
 gem 'friendly_id', '~> 4.0.1' # friendly urls (names instead of numbers)
 gem 'paper_trail', '~> 2.6.3' # track changes and allow undo
+gem 'omniauth-oauth2', '~> 1.1.2' # allow login as an OAuth2 client
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.4'
