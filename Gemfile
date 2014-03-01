@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.0'
 
 gem 'dotenv-rails', '~> 0.9.0', groups: [:development, :test]
 
-gem 'rails', '~> 3.2.16'
+gem 'rails', '~> 3.2.17'
 gem 'jquery-rails', '~> 2.0.0'
 
 gem 'will_paginate', '~> 3.0.3' # pagination for index pages
