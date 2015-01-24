@@ -14,7 +14,9 @@ class Frame < ActiveRecord::Base
 									},
 									storage: :s3,
 									s3_credentials: S3_CREDENTIALS,
-									s3_protocol: :http
+									s3_protocol: :http,
+                  url: ":s3_domain_url",
+                  path: "/:class/:attachment/:id_partition/:style/:filename"
 
   validates_attachment :image, content_type: {
   										 content_type: ['image/jpeg', 'image/png', 'image/gif'] },
