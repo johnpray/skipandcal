@@ -54,4 +54,12 @@ class Comic < ActiveRecord::Base
       Comic.where(published: true).where("published_at < ?", published_at).first
     end
   end
+
+  def as_json(options={})
+    super({include: [
+        :frames => {:methods => [:image_url]},
+        :categories => {}
+      ]
+    })
+  end
 end

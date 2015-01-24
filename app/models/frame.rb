@@ -21,4 +21,8 @@ class Frame < ActiveRecord::Base
   										 presence: true
 
   default_scope order: '"order" ASC, created_at ASC'
+
+  def image_url
+    image.url
+  end
 end

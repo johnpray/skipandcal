@@ -2,9 +2,16 @@ class ComicsController < ApplicationController
 
   before_filter :admin,  except: [:index, :show, :feed]
 
+  respond_to :html, :json
+
   def index
     @category = Category.find(params[:category]) if params[:category]
     @comics = @category ? @category.comics : Comic.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @comics }
+    end
   end
 
   def show
@@ -21,8 +28,13 @@ class ComicsController < ApplicationController
       redirect_to comics_path
     end
 
-    if request.path != comic_path(@comic) && request.path != root_path
-      redirect_to @comic, status: :moved_permanently
+    if request.path != comic_path(@comic, format: params[:format]) && request.path != root_path
+      redirect_to comic_path(@comic, format: params[:format]), status: :moved_permanently
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @comic }
     end
   end
 
