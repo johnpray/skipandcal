@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.1.4'
+# ruby '2.1.4'
 
 gem 'dotenv-rails', '~> 0.9.0', groups: [:development, :test]
 
-gem 'rails', '~> 3.2.17'
-gem 'jquery-rails', '~> 2.0.0'
+gem 'rails', '~> 3.2.22'
+gem 'jquery-rails', '~> 3.1.3'
 
 gem 'will_paginate', '~> 3.0.3' # pagination for index pages
 gem 'redcarpet', '~> 2.1.1' # markdown
