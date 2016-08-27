@@ -1,10 +1,4 @@
 jQuery ->
-	# Scroll down to top controls on all comics pages but home
-	unless $('body.home').length
-		$('body.comics.show').animate
-			scrollTop: if $('ul.comics').length then $('ul.comics').offset().top-5
-		, 500
-
 	# Do fancy animations when clicking the category button
 	$(".category_button").click ->
 		$('body').animate
