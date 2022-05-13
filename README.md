@@ -1,7 +1,7 @@
 Skip & Cal
 ==========
 
-This repository contains the source code for [skipandcal.net](http://skipandcal.net), a web repository of my cartoons and comics.
+This repository contains the source code for the app that used to power [skipandcal.net](http://skipandcal.net), a web repository of my cartoons and comics. (As of 2022, the site instead runs on static pages derived from this app.)
 
 This website uses the [Ruby on Rails 3.2](http://rubyonrails.org/) web development framework and the [ZURB Foundation 2](http://foundation.zurb.com/) web design framework. The site itself is happily hosted on [Heroku](http://www.heroku.com/).
 
